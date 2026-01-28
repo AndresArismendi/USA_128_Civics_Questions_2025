@@ -11,7 +11,7 @@ function App() {
  
   const quizData = [
     {
-        question: "¿Qué es React principalmente?",
+        question: "¿Qué es React principalmente ?",
         options: [
             "Un lenguaje de programación completo.",
             "Una base de datos para aplicaciones web.",
