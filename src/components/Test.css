@@ -17,8 +17,27 @@ body {
   max-width: 36rem;
   margin: 0 auto;
   padding: 2rem 2.25rem;
+  padding-top: 2rem;
   text-align: left;
   box-sizing: border-box;
+  position: relative;
+}
+
+/* Progress bar: container + fill (pill-shaped) */
+.quiz-container .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #d3d3d3;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-container .progress-bar-fill {
+  height: 100%;
+  background-color: #2563eb;
+  width: 10%;
+  transition: width 0.3s ease;
 }
 
 .quiz-container h1 {

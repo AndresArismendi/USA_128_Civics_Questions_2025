@@ -11,6 +11,9 @@ const Test = ({ quizData }) => {
   const currentQuestion = questions[currentQuestionIndex]
   const isLastQuestion = currentQuestionIndex === questions.length - 1
   const questionNumber = currentQuestionIndex + 1
+  const progressPercent = showResults
+    ? 100
+    : ((currentQuestionIndex + 1) / questions.length) * 100
 
   const handleOptionClick = (optionText) => {
     if (selectedAnswer !== null) return
@@ -46,6 +49,9 @@ const Test = ({ quizData }) => {
   if (showResults) {
     return (
       <div className="quiz-container">
+        <div className="progress-bar" role="progressbar" aria-valuenow={100} aria-valuemin={0} aria-valuemax={100}>
+          <div className="progress-bar-fill" style={{ width: '100%' }} />
+        </div>
         <h1>{title}</h1>
         {subtitle && <p className="quiz-subtitle">{subtitle}</p>}
         <h2 className="question results">Questionnaire Complete</h2>
@@ -66,6 +72,9 @@ const Test = ({ quizData }) => {
 
   return (
     <div className="quiz-container">
+      <div className="progress-bar" role="progressbar" aria-valuenow={currentQuestionIndex + 1} aria-valuemin={0} aria-valuemax={questions.length}>
+        <div className="progress-bar-fill" style={{ width: `${progressPercent}%` }} />
+      </div>
       <h1>{title}</h1>
       {subtitle && <p className="quiz-subtitle">{subtitle}</p>}
       <p className="question-number">

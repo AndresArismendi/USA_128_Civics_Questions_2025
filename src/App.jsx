@@ -4,6 +4,15 @@ import Test from './components/Test.jsx'
 
 const QUIZ_DATA_URL = '/quiz-data.json'
 
+function shuffleArray(array) {
+  const copy = [...array]
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
+
 function App() {
   const [quizData, setQuizData] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -19,7 +28,7 @@ function App() {
         if (!data.questions || !Array.isArray(data.questions)) {
           throw new Error('Invalid questionnaire format. Expected a "questions" array.')
         }
-        setQuizData(data)
+        setQuizData({ ...data, questions: shuffleArray(data.questions) })
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
