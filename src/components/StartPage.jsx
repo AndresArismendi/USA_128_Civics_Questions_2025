@@ -75,6 +75,19 @@ function StartPage({ totalQuestions, onSelectMode }) {
           </div>
         </div>
       </div>
+
+      <div className="disclaimer" role="contentinfo">
+        <p>
+          This website is a study tool for the USCIS 2025 Civics Test and is not an official USCIS site. All questions and answers are based on the publicly available USCIS materials.
+        </p>
+        <p>
+          We make every effort to provide accurate and up-to-date information, but we cannot guarantee correctness and the official USCIS test may be updated.
+        </p>
+        <p>
+          This site is for educational purposes only. We do not provide immigration advice. For official information about the U.S. citizenship test, please visit{' '}
+          <a href="https://www.uscis.gov/citizenship" target="_blank" rel="noopener noreferrer">uscis.gov/citizenship</a>.
+        </p>
+      </div>
     </div>
   )
 }

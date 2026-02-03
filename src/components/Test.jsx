@@ -1,5 +1,14 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import './Test.css'
+
+function shuffleOptions(array) {
+  const copy = [...array]
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]]
+  }
+  return copy
+}
 
 const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
   const { title = 'Civics Questionnaire', subtitle, questions } = quizData
@@ -9,6 +18,10 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
   const [showResults, setShowResults] = useState(false)
 
   const currentQuestion = questions[currentQuestionIndex]
+  const optionsInRandomOrder = useMemo(
+    () => shuffleOptions(currentQuestion.options),
+    [currentQuestion]
+  )
   const isLastQuestion = currentQuestionIndex === questions.length - 1
   const questionNumber = currentQuestionIndex + 1
   const progressPercent = showResults
@@ -96,7 +109,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
       </p>
       <h2 className="question">{currentQuestion.question}</h2>
       <ul className="options">
-        {currentQuestion.options.map((optionText) => (
+        {optionsInRandomOrder.map((optionText) => (
           <li key={optionText}>
             <button
               type="button"

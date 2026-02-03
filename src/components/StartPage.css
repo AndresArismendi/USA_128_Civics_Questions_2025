@@ -149,3 +149,33 @@
 .mode-card-popular .mode-badge {
   top: 1.25rem;
 }
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: #4a5568;
+}
+
+.disclaimer p {
+  margin: 0 0 0.75rem 0;
+}
+
+.disclaimer p:last-child {
+  margin-bottom: 0;
+}
+
+.disclaimer a {
+  color: #2c5282;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.disclaimer a:hover {
+  text-decoration: underline;
+}
