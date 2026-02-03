@@ -1,8 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import './App.css'
 import Test from './components/Test.jsx'
+import StartPage from './components/StartPage.jsx'
 
 const QUIZ_DATA_URL = '/quiz-data.json'
+const EXAM_QUESTION_COUNT = 20
+const EXAM_PASS_THRESHOLD = 12
+const QUICK_QUESTION_COUNT = 10
 
 function shuffleArray(array) {
   const copy = [...array]
@@ -14,9 +18,11 @@ function shuffleArray(array) {
 }
 
 function App() {
-  const [quizData, setQuizData] = useState(null)
+  const [rawQuizData, setRawQuizData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [selectedMode, setSelectedMode] = useState(null)
+  const [sessionKey, setSessionKey] = useState(0)
 
   useEffect(() => {
     fetch(QUIZ_DATA_URL)
@@ -28,11 +34,28 @@ function App() {
         if (!data.questions || !Array.isArray(data.questions)) {
           throw new Error('Invalid questionnaire format. Expected a "questions" array.')
         }
-        setQuizData({ ...data, questions: shuffleArray(data.questions) })
+        setRawQuizData(data)
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false))
   }, [])
+
+  const quizDataForMode = useMemo(() => {
+    if (!rawQuizData || !selectedMode) return null
+    const all = rawQuizData.questions
+    const shuffled = shuffleArray(all)
+    let questions
+    if (selectedMode === 'study') {
+      questions = shuffled
+    } else if (selectedMode === 'exam') {
+      questions = shuffled.slice(0, Math.min(EXAM_QUESTION_COUNT, shuffled.length))
+    } else {
+      questions = shuffled.slice(0, Math.min(QUICK_QUESTION_COUNT, shuffled.length))
+    }
+    return { ...rawQuizData, questions }
+  }, [rawQuizData, selectedMode])
+
+  const passThreshold = selectedMode === 'exam' ? EXAM_PASS_THRESHOLD : undefined
 
   if (loading) {
     return (
@@ -50,7 +73,7 @@ function App() {
     )
   }
 
-  if (!quizData.questions.length) {
+  if (!rawQuizData?.questions?.length) {
     return (
       <div className="app-empty">
         <p>No questions available in this questionnaire.</p>
@@ -58,9 +81,26 @@ function App() {
     )
   }
 
+  if (!selectedMode) {
+    return (
+      <div className="app">
+        <StartPage
+          totalQuestions={rawQuizData.questions.length}
+          onSelectMode={setSelectedMode}
+        />
+      </div>
+    )
+  }
+
   return (
     <div className="app">
-      <Test quizData={quizData} />
+      <Test
+        key={sessionKey}
+        quizData={quizDataForMode}
+        passThreshold={passThreshold}
+        onBackToStart={() => setSelectedMode(null)}
+        onRestart={() => setSessionKey((k) => k + 1)}
+      />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './Test.css'
 
-const Test = ({ quizData }) => {
+const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
   const { title = 'Civics Questionnaire', subtitle, questions } = quizData
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
@@ -31,6 +31,7 @@ const Test = ({ quizData }) => {
   }
 
   const handleRestart = () => {
+    onRestart?.()
     setCurrentQuestionIndex(0)
     setScore(0)
     setSelectedAnswer(null)
@@ -47,6 +48,7 @@ const Test = ({ quizData }) => {
   }
 
   if (showResults) {
+    const passed = passThreshold != null ? score >= passThreshold : null
     return (
       <div className="quiz-container">
         <div className="progress-bar" role="progressbar" aria-valuenow={100} aria-valuemin={0} aria-valuemax={100}>
@@ -55,12 +57,24 @@ const Test = ({ quizData }) => {
         <h1>{title}</h1>
         {subtitle && <p className="quiz-subtitle">{subtitle}</p>}
         <h2 className="question results">Questionnaire Complete</h2>
+        {passed !== null && (
+          <p className={`results-verdict ${passed ? 'results-pass' : 'results-fail'}`}>
+            {passed ? 'You passed.' : `You did not pass. You need at least ${passThreshold} correct to pass.`}
+          </p>
+        )}
         <div className="feedback results">
           Your score: <strong>{score} out of {questions.length}</strong> correct.
         </div>
-        <button type="button" className="next-btn" onClick={handleRestart}>
-          Start Over
-        </button>
+        <div className="results-actions">
+          <button type="button" className="next-btn" onClick={handleRestart}>
+            Start Over
+          </button>
+          {onBackToStart && (
+            <button type="button" className="next-btn next-btn-secondary" onClick={onBackToStart}>
+              Back to menu
+            </button>
+          )}
+        </div>
       </div>
     )
   }
