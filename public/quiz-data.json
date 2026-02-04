@@ -250,10 +250,10 @@
   "options": [
     "The Speaker of the House",
     "The Governor",
-    "Answers will vary. [District of Columbia residents and residents of U.S. territories should answer that D.C. (or the territory where the applicant lives) has no U.S. senators.]",
+    "Answers will vary.",
     "The Chief Justice of the Supreme Court"
   ],
-  "correctAnswer": "Answers will vary. [District of Columbia residents and residents of U.S. territories should answer that D.C. (or the territory where the applicant lives) has no U.S. senators.]",
+  "correctAnswer": "Answers will vary.",
   "explanation": "This question depends on your state, territory, or personal situation, so the correct response will vary."
 },
 {
@@ -316,21 +316,21 @@
   "options": [
     "The Governor of your state",
     "The Speaker of the House",
-    "Answers will vary. [Residents of territories with nonvoting Delegates or Resident Commissioners may provide the name of that Delegate or Commissioner. Also acceptable is any statement that the territory has no (voting) representatives in Congress.]",
+    "Answers will vary.",
     "The President of the United States"
   ],
-  "correctAnswer": "Answers will vary. [Residents of territories with nonvoting Delegates or Resident Commissioners may provide the name of that Delegate or Commissioner. Also acceptable is any statement that the territory has no (voting) representatives in Congress.]",
+  "correctAnswer": "Answers will vary.",
   "explanation": "This question depends on your state, territory, or personal situation, so the correct response will vary."
 },
 {
   "question": "What is the name of the Speaker of the House of Representatives now?",
   "options": [
-    "The Vice President of the United States",
-    "The Chief Justice of the Supreme Court",
-    "Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives.",
-    "The Senate Majority Leader"
+    "Mike Johnson.",
+    "JD Vance.",
+    "Donald J. Trump.",
+    "Marco Rubio."
   ],
-  "correctAnswer": "Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives.",
+  "correctAnswer": "Mike Johnson.",
   "explanation": "This answer can change due to elections or appointments; USCIS directs applicants to check the official test updates page for the current name."
 },
 {
@@ -413,23 +413,23 @@
 {
   "question": "What is the name of the President of the United States now?",
   "options": [
-    "The Speaker of the House",
-    "The Vice President",
-    "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States.",
-    "The Secretary of State"
+    "Mike Johnson",
+    "JD Vance.",
+    "Donald J. Trump.",
+    "Marco Rubio."
   ],
-  "correctAnswer": "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States.",
+  "correctAnswer": "Donald J. Trump.",
   "explanation": "This answer can change due to elections or appointments; USCIS directs applicants to check the official test updates page for the current name."
 },
 {
   "question": "What is the name of the Vice President of the United States now?",
   "options": [
-    "The Senate Majority Leader",
+    "Marco Rubio",
     "The Chief Justice",
-    "The Speaker of the House",
-    "Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States."
+    "Mike Johnson",
+    "JD Vance."
   ],
-  "correctAnswer": "Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States.",
+  "correctAnswer": "JD Vance.",
   "explanation": "This answer can change due to elections or appointments; USCIS directs applicants to check the official test updates page for the current name."
 },
 {
@@ -622,12 +622,12 @@
 {
   "question": "Who is the Chief Justice of the United States now?",
   "options": [
-    "Visit uscis.gov/citizenship/testupdates for the name of the Chief Justice of the United States.",
+    "John Glover Roberts Jr.",
     "The President",
     "The Vice President",
     "The Attorney General"
   ],
-  "correctAnswer": "Visit uscis.gov/citizenship/testupdates for the name of the Chief Justice of the United States.",
+  "correctAnswer": "John Glover Roberts Jr.",
   "explanation": "This answer can change due to elections or appointments; USCIS directs applicants to check the official test updates page for the current name."
 },
 {
@@ -666,23 +666,23 @@
 {
   "question": "Who is the governor of your state now?",
   "options": [
-    "Answers will vary. [District of Columbia residents should answer that D.C. does not have a governor.]",
+    "Answers will vary.",
     "The President",
     "The Vice President",
     "The Chief Justice"
   ],
-  "correctAnswer": "Answers will vary. [District of Columbia residents should answer that D.C. does not have a governor.]",
+  "correctAnswer": "Answers will vary.",
   "explanation": "This question depends on your state, territory, or personal situation, so the correct response will vary."
 },
 {
   "question": "What is the capital of your state?",
   "options": [
-    "Answers will vary. [District of Columbia residents should answer that D.C. is not a state and does not have a capital. Residents of U.S. territories should name the capital of the territory.]",
-    "New York City",
-    "Los Angeles",
-    "Chicago"
+    "Answers will vary.",
+    "New York",
+    "USA",
+    "Miami"
   ],
-  "correctAnswer": "Answers will vary. [District of Columbia residents should answer that D.C. is not a state and does not have a capital. Residents of U.S. territories should name the capital of the territory.]",
+  "correctAnswer": "Answers will vary.",
   "explanation": "This question depends on your state, territory, or personal situation, so the correct response will vary."
 },
 {
@@ -1129,8 +1129,8 @@
   "question": "What was the Great Depression?",
   "options": [
     "Longest economic recession in modern history",
-    "Visit uscis.gov/citizenship/testupdates for the name of the President of the United States.",
-    "Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States.",
+    "Short wellness period in the 1920s",
+    "The period of greatest economic prosperity in the history of the United States.",
     "People of their state"
   ],
   "correctAnswer": "Longest economic recession in modern history",
@@ -1163,7 +1163,7 @@
   "options": [
     "(Bombing of) Pearl Harbor• Japanese attacked Pearl Harbor• To support the Allied Powers (England, France, and Russia)",
     "British soldiers stayed in Americans’ houses (boarding, quartering)• They did not have self-government• Boston Massacre• Boston Tea Party (Tea Act)• Stamp Act",
-    "Visit uscis.gov/citizenship/testupdates for the name of the Speaker of the House of Representatives.",
+    "Because Germany attacked U.S. (civilian)",
     "Vetoes bills"
   ],
   "correctAnswer": "(Bombing of) Pearl Harbor• Japanese attacked Pearl Harbor• To support the Allied Powers (England, France, and Russia)",
@@ -1361,7 +1361,7 @@
   "options": [
     "Out of many, one",
     "Provide schooling and education",
-    "Visit uscis.gov/citizenship/testupdates for the name of the Vice President of the United States.",
+    "We people",
     "(Because the stripes) represent the original colonies"
   ],
   "correctAnswer": "Out of many, one",
