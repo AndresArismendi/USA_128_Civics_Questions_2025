@@ -28,7 +28,7 @@ const MODES = {
   },
 }
 
-function StartPage({ totalQuestions, onSelectMode }) {
+function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
   const studyTitle = totalQuestions != null
     ? `Study All ${totalQuestions} Questions`
     : 'Study All Questions'
@@ -88,6 +88,14 @@ function StartPage({ totalQuestions, onSelectMode }) {
           <a href="https://www.uscis.gov/citizenship" target="_blank" rel="noopener noreferrer">uscis.gov/citizenship</a>.
         </p>
       </div>
+
+      {onShowAbout && (
+        <div className="about-link-container">
+          <button type="button" className="about-link-btn" onClick={onShowAbout}>
+            Learn More About the Citizenship Test →
+          </button>
+        </div>
+      )}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import './Test.css'
 
 function shuffleOptions(array) {
@@ -16,6 +16,9 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
   const [score, setScore] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [showResults, setShowResults] = useState(false)
+  const [showAdBreak, setShowAdBreak] = useState(false)
+  const [adCountdown, setAdCountdown] = useState(0)
+  const [pendingAction, setPendingAction] = useState(null)
 
   const currentQuestion = questions[currentQuestionIndex]
   const optionsInRandomOrder = useMemo(
@@ -34,8 +37,48 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
     if (optionText === currentQuestion.correctAnswer) setScore((s) => s + 1)
   }
 
+  const shouldShowAd = questionNumber % 10 === 0 || isLastQuestion
+
   const handleNext = () => {
-    if (isLastQuestion) {
+    if (shouldShowAd) {
+      setPendingAction(isLastQuestion ? 'showResults' : 'nextQuestion')
+      setShowAdBreak(true)
+      setAdCountdown(3)
+    } else {
+      if (isLastQuestion) {
+        setShowResults(true)
+      } else {
+        setCurrentQuestionIndex((i) => i + 1)
+        setSelectedAnswer(null)
+      }
+    }
+  }
+
+  useEffect(() => {
+    if (!showAdBreak || adCountdown <= 0) return
+    const id = setInterval(() => setAdCountdown((c) => c - 1), 1000)
+    return () => clearInterval(id)
+  }, [showAdBreak, adCountdown])
+
+  useEffect(() => {
+    if (!showAdBreak) return
+    const t = setTimeout(() => {
+      try {
+        if (window.adsbygoogle) {
+          (window.adsbygoogle = window.adsbygoogle || []).push({})
+        }
+      } catch (e) {
+        // AdSense not loaded or not configured
+      }
+    }, 100)
+    return () => clearTimeout(t)
+  }, [showAdBreak])
+
+  const handleAdNext = () => {
+    const action = pendingAction
+    setShowAdBreak(false)
+    setPendingAction(null)
+    if (action === 'showResults') {
       setShowResults(true)
     } else {
       setCurrentQuestionIndex((i) => i + 1)
@@ -58,6 +101,38 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
     if (isCorrectOption) return 'option-btn correct'
     if (isSelected && !isCorrectOption) return 'option-btn incorrect'
     return 'option-btn'
+  }
+
+  if (showAdBreak) {
+    return (
+      <div className="quiz-container">
+        <div className="progress-bar" role="progressbar" aria-valuenow={currentQuestionIndex + 1} aria-valuemin={0} aria-valuemax={questions.length}>
+          <div className="progress-bar-fill" style={{ width: `${progressPercent}%` }} />
+        </div>
+        <h1>{title}</h1>
+        {subtitle && <p className="quiz-subtitle">{subtitle}</p>}
+        <div id="quiz-ad" className="quiz-ad">
+          <ins
+            className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-5927169678303290"
+            data-ad-slot="XXXXXXXXXX"
+            data-ad-format="auto"
+          />
+        </div>
+        <p className="ad-countdown" aria-live="polite">
+          {adCountdown > 0 ? `Continue in ${adCountdown} second${adCountdown !== 1 ? 's' : ''}...` : 'Click Next to continue.'}
+        </p>
+        <button
+          type="button"
+          className="next-btn"
+          onClick={handleAdNext}
+          disabled={adCountdown > 0}
+        >
+          Next
+        </button>
+      </div>
+    )
   }
 
   if (showResults) {

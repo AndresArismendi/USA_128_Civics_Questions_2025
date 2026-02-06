@@ -204,13 +204,13 @@
 {
   "question": "What are the two parts of the U.S. Congress?",
   "options": [
-    "House and Senate",
-    "Executive and legislative",
-    "Congress and Supreme Court",
-    "President and Cabinet"
+    "The House of Representatives and The Senate",
+    "The Executive and The legislative",
+    "The Congress and The Supreme Court",
+    "The President and The Cabinet"
   ],
-  "correctAnswer": "Senate and House (of Representatives)",
-  "explanation": "According to the official USCIS 2025 civics test list, the correct answer is \"Senate and House (of Representatives)\"."
+  "correctAnswer": "The House of Representatives and The Senate",
+  "explanation": "According to the official USCIS 2025 civics test list, the correct answer is \"The House of Representatives and The Senate\"."
 },
 {
   "question": "Name one power of the U.S. Congress.",

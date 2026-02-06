@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import './App.css'
 import Test from './components/Test.jsx'
 import StartPage from './components/StartPage.jsx'
+import About from './components/About.jsx'
 
 const QUIZ_DATA_URL = '/quiz-data.json'
 const EXAM_QUESTION_COUNT = 20
@@ -23,6 +24,7 @@ function App() {
   const [error, setError] = useState(null)
   const [selectedMode, setSelectedMode] = useState(null)
   const [sessionKey, setSessionKey] = useState(0)
+  const [showAbout, setShowAbout] = useState(false)
 
   useEffect(() => {
     fetch(QUIZ_DATA_URL)
@@ -81,12 +83,21 @@ function App() {
     )
   }
 
+  if (showAbout) {
+    return (
+      <div className="app">
+        <About onBackToStart={() => setShowAbout(false)} />
+      </div>
+    )
+  }
+
   if (!selectedMode) {
     return (
       <div className="app">
         <StartPage
           totalQuestions={rawQuizData.questions.length}
           onSelectMode={setSelectedMode}
+          onShowAbout={() => setShowAbout(true)}
         />
       </div>
     )

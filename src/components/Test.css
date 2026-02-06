@@ -244,3 +244,21 @@ body {
   font-size: 1.25rem;
   margin-bottom: 1rem;
 }
+
+/* Ad break (same box as question) */
+.quiz-container .quiz-ad {
+  margin: 1rem 0;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.quiz-container .ad-countdown {
+  font-size: 0.9375rem;
+  color: #4a5568;
+  margin: 1rem 0 0.5rem 0;
+}

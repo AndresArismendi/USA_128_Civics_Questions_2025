@@ -179,3 +179,27 @@
 .disclaimer a:hover {
   text-decoration: underline;
 }
+
+/* About link */
+.about-link-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.about-link-btn {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid #2c5282;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  color: #2c5282;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.about-link-btn:hover {
+  background: #2c5282;
+  color: #ffffff;
+}
