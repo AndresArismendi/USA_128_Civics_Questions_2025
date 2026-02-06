@@ -42,6 +42,13 @@ function About({ onBackToStart }) {
           <strong>Preguntas examen ciudadanía americana</strong> y <strong>examen de ciudadanía usa preguntas</strong> en un <strong>test de ciudadanía americana</strong> gratis. <strong>Preguntas civismo estados unidos</strong> y <strong>examen naturalización estados unidos</strong> para la <strong>prueba de ciudadanía americana online</strong>. <strong>Preguntas examen ciudadanía americana 2025</strong>, <strong>examen de ciudadanía americana en español</strong>, <strong>test de ciudadanía americana gratis</strong>. <strong>Preguntas y respuestas ciudadanía usa</strong> — use este <strong>simulador examen ciudadanía americana</strong> para <strong>práctica examen ciudadanía estados unidos</strong>.
         </p>
       </section>
+
+      <section className="contact-info">
+        <h3>Contact</h3>
+        <p>
+          For any questions or feedback, please contact us at <a href="mailto:mycivics.contact@gmail.com">mycivics.contact@gmail.com</a>.
+        </p>
+      </section>
     </div>
   )
 }
