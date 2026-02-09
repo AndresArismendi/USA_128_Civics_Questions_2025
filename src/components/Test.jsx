@@ -116,8 +116,9 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
             className="adsbygoogle"
             style={{ display: 'block' }}
             data-ad-client="ca-pub-5927169678303290"
-            data-ad-slot="XXXXXXXXXX"
+            data-ad-slot="7586582915"
             data-ad-format="auto"
+            data-full-width-responsive="true"            
           />
         </div>
         <p className="ad-countdown" aria-live="polite">
