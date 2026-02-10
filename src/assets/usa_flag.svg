@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1235 650">
+  <rect width="1235" height="650" fill="#b22234"/>
+  <rect width="1235" height="50" y="50" fill="#fff"/>
+  <rect width="1235" height="50" y="150" fill="#fff"/>
+  <rect width="1235" height="50" y="250" fill="#fff"/>
+  <rect width="1235" height="50" y="350" fill="#fff"/>
+  <rect width="1235" height="50" y="450" fill="#fff"/>
+  <rect width="1235" height="50" y="550" fill="#fff"/>
+  <rect width="494" height="350" fill="#3c3b6e"/>
+  <g fill="#fff">
+    <g id="s18">
+      <g id="s9">
+        <g id="s5">
+          <g id="s4">
+            <path id="s" d="M24.7,2.85l7.634,23.504h24.714l-19.994,14.524l7.634,23.504L24.7,50.858l-19.994,13.524l7.634-23.504L-7.654,26.354H17.066z"/>
+            <use xlink:href="#s" y="84"/>
+            <use xlink:href="#s" y="168"/>
+            <use xlink:href="#s" y="252"/>
+          </g>
+          <use xlink:href="#s" y="336"/>
+        </g>
+        <use xlink:href="#s5" x="82.333"/>
+        <use xlink:href="#s4" x="164.666"/>
+      </g>
+      <use xlink:href="#s9" x="247"/>
+    </g>
+    <use xlink:href="#s18" x="494"/>
+    <use xlink:href="#s9" x="41.167" y="42"/>
+    <use xlink:href="#s9" x="123.5" y="42"/>
+    <use xlink:href="#s9" x="205.833" y="42"/>
+    <use xlink:href="#s9" x="288.167" y="42"/>
+  </g>
+</svg>

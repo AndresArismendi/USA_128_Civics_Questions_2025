@@ -1,4 +1,6 @@
-import './StartPage.css'
+import { useState } from "react";
+import './StartPage.css';
+
 
 const MODES = {
   study: {
@@ -29,10 +31,57 @@ const MODES = {
 }
 
 function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
-  const studyTitle = totalQuestions != null
-    ? `Study All ${totalQuestions} Questions`
-    : 'Study All Questions'
+  const [pendingMode, setPendingMode] = useState(null);
 
+  const studyTitle =
+    totalQuestions != null
+      ? `Study All ${totalQuestions} Questions`
+      : "Study All Questions";
+
+  // --- Language selection overlay ---
+  if (pendingMode) {
+    return (
+      <div className="start-page">
+        <h2 style={{ textAlign: "center", margin: "2rem 0" }}>
+          Choose Language / Elige idioma
+        </h2>
+        <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
+          <button
+            className="mode-card-btn"
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+            onClick={() => {
+              onSelectMode(pendingMode, "en");
+              setPendingMode(null);
+            }}
+          >
+            <img src="/usa-flag.png" alt="USA Flag" style={{ width: "30px", height: "auto" }} />
+            English
+          </button>
+          <button
+            className="mode-card-btn"
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+            onClick={() => {
+              onSelectMode(pendingMode, "es");
+              setPendingMode(null);
+            }}
+          >
+            <img src="/spain-flag.png" alt="Spain Flag" style={{ width: "30px", height: "auto" }} />
+            Español
+          </button>
+        </div>
+        <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
+          <button
+            className="about-link-btn"
+            onClick={() => setPendingMode(null)}
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // --- Mode cards as before, but buttons just set pendingMode ---
   return (
     <div className="start-page">
       <h1 className="start-page-title">Choose Your Study Mode</h1>
@@ -43,12 +92,11 @@ function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
             <div className="mode-card-icon" aria-hidden="true">{MODES.study.icon}</div>
             <h2 className="mode-card-title">{studyTitle}</h2>
             <p className="mode-card-desc">{MODES.study.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => onSelectMode('study')}>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('study')}>
               {MODES.study.buttonLabel}
             </button>
           </div>
         </div>
-
         <div className="mode-card mode-card-popular">
           <div className={MODES.exam.headerClass}>
             <span className="mode-badge">{MODES.exam.badge}</span>
@@ -57,19 +105,18 @@ function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
             <div className="mode-card-icon exam" aria-hidden="true">{MODES.exam.icon}</div>
             <h2 className="mode-card-title">{MODES.exam.title}</h2>
             <p className="mode-card-desc">{MODES.exam.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => onSelectMode('exam')}>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('exam')}>
               {MODES.exam.buttonLabel}
             </button>
           </div>
         </div>
-
         <div className="mode-card">
           <div className={MODES.quick.headerClass} />
           <div className="mode-card-body">
             <div className="mode-card-icon quick" aria-hidden="true">{MODES.quick.icon}</div>
             <h2 className="mode-card-title">{MODES.quick.title}</h2>
             <p className="mode-card-desc">{MODES.quick.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => onSelectMode('quick')}>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('quick')}>
               {MODES.quick.buttonLabel}
             </button>
           </div>
@@ -97,7 +144,7 @@ function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default StartPage
+export default StartPage;

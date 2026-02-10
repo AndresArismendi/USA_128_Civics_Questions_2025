@@ -1,0 +1,1385 @@
+{
+  "title": "Preguntas y Respuestas de Civismo de EE.UU. (2025)",
+  "subtitle": "Practique para el examen de civismo de naturalización. Seleccione la mejor respuesta para cada pregunta.",
+  "questions": 
+  [
+    {
+  "question": "¿Cuál es la forma de gobierno de los Estados Unidos?",
+  "options": [
+    "Monarquía",
+    "Democracia directa",
+    "Estado autoritario",
+    "República"
+  ],
+  "correctAnswer": "República",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"República\"."
+},
+{
+  "question": "¿Cuál es la ley suprema de la nación?",
+  "options": [
+    "La Declaración de Independencia",
+    "La Constitución (de los EE.UU.)",
+    "Los estatutos federales",
+    "Las decisiones de la Corte Suprema"
+  ],
+  "correctAnswer": "La Constitución (de los EE.UU.)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Constitución (de los EE.UU.)\"."
+},
+{
+  "question": "Mencione una cosa que hace la Constitución de los EE.UU.",
+  "options": [
+    "Declara la independencia de Gran Bretaña",
+    "Establece los partidos políticos",
+    "Establece la política exterior",
+    "Forma el gobierno"
+  ],
+  "correctAnswer": "Forma el gobierno",
+  "explanation": "\"Forma el gobierno\" es una respuesta aceptable listada por USCIS para esta pregunta."
+},
+{
+  "question": "La Constitución de los EE.UU. comienza con las palabras \"Nosotros el Pueblo\". ¿Qué significa \"Nosotros el Pueblo\"?",
+  "options": [
+    "Autogobierno• Soberanía popular• Consentimiento de los gobernados• El pueblo debe gobernarse a sí mismo• (Ejemplo de) contrato social",
+    "El poder del gobierno proviene del presidente",
+    "Solo el Congreso tiene autoridad",
+    "Los estados tienen más poder que los ciudadanos"
+  ],
+  "correctAnswer": "Autogobierno• Soberanía popular• Consentimiento de los gobernados• El pueblo debe gobernarse a sí mismo• (Ejemplo de) contrato social",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Autogobierno• Soberanía popular• Consentimiento de los gobernados• El pueblo debe gobernarse a sí mismo• (Ejemplo de) contrato social\"."
+},
+{
+  "question": "¿Cómo se realizan cambios a la Constitución de los EE.UU.?",
+  "options": [
+    "Por orden ejecutiva",
+    "Por decisión de la Corte Suprema",
+    "Por una elección nacional",
+    "Enmiendas• El proceso de enmienda"
+  ],
+  "correctAnswer": "Enmiendas• El proceso de enmienda",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Enmiendas• El proceso de enmienda\"."
+},
+{
+  "question": "¿Qué protege la Declaración de Derechos?",
+  "options": [
+    "Los poderes del gobierno federal",
+    "Los derechos de los gobiernos estatales",
+    "Los derechos (básicos) de los estadounidenses",
+    "Los privilegios de los funcionarios electos"
+  ],
+  "correctAnswer": "Los derechos (básicos) de los estadounidenses",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Los derechos (básicos) de los estadounidenses\"."
+},
+{
+  "question": "¿Cuántas enmiendas tiene la Constitución de los EE.UU.?",
+  "options": [
+    "Veintisiete (27)",
+    "Diez (10)",
+    "Veinticinco (25)",
+    "Treinta (30)"
+  ],
+  "correctAnswer": "Veintisiete (27)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Veintisiete (27)\"."
+},
+{
+  "question": "¿Por qué es importante la Declaración de Independencia?",
+  "options": [
+    "Creó la Constitución de los EE.UU.",
+    "Estableció la Declaración de Derechos",
+    "Formó el primer gobierno nacional",
+    "Dice que Estados Unidos es libre del control británico."
+  ],
+  "correctAnswer": "Dice que Estados Unidos es libre del control británico.",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Dice que Estados Unidos es libre del control británico.\"."
+},
+{
+  "question": "¿Qué documento fundacional decía que las colonias americanas eran libres de Gran Bretaña?",
+  "options": [
+    "Los Artículos de la Confederación",
+    "La Constitución de los EE.UU.",
+    "La Declaración de Independencia",
+    "La Declaración de Derechos"
+  ],
+  "correctAnswer": "La Declaración de Independencia",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Declaración de Independencia\"."
+},
+{
+  "question": "Mencione dos ideas importantes de la Declaración de Independencia y la Constitución de los EE.UU.",
+  "options": [
+    "Igualdad",
+    "Días festivos federales",
+    "Servicio militar",
+    "Sanciones económicas"
+  ],
+  "correctAnswer": "Igualdad",
+  "explanation": "\"Igualdad\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "Las palabras \"Vida, Libertad y la búsqueda de la Felicidad\" están en qué documento fundacional?",
+  "options": [
+    "Los Artículos de la Confederación",
+    "Los Documentos Federalistas",
+    "La Constitución de los EE.UU.",
+    "La Declaración de Independencia"
+  ],
+  "correctAnswer": "La Declaración de Independencia",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Declaración de Independencia\"."
+},
+{
+  "question": "¿Cuál es el sistema económico de los Estados Unidos?",
+  "options": [
+    "Socialismo",
+    "Comunismo",
+    "Capitalismo",
+    "Feudalismo"
+  ],
+  "correctAnswer": "Capitalismo",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Capitalismo\"."
+},
+{
+  "question": "¿Qué es el estado de derecho?",
+  "options": [
+    "El presidente está por encima de la ley",
+    "Solo los ciudadanos deben seguir la ley",
+    "Todos deben seguir la ley.",
+    "Las leyes se aplican solo durante emergencias"
+  ],
+  "correctAnswer": "Todos deben seguir la ley.",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Todos deben seguir la ley.\"."
+},
+{
+  "question": "Muchos documentos influyeron en la Constitución de los EE.UU. Mencione uno.",
+  "options": [
+    "Los Artículos de la Confederación",
+    "Los Documentos Federalistas",
+    "La Declaración de Independencia",
+    "La Carta Magna"
+  ],
+  "correctAnswer": "La Declaración de Independencia",
+  "explanation": "\"La Declaración de Independencia\" es una respuesta aceptable listada por USCIS para esta pregunta."
+},
+{
+  "question": "Hay tres ramas del gobierno. ¿Por qué?",
+  "options": [
+    "Para hacer que el gobierno funcione más rápido",
+    "Para dar más poder al presidente",
+    "Para que una parte no se vuelva demasiado poderosa",
+    "Para representar diferentes partidos políticos"
+  ],
+  "correctAnswer": "Para que una parte no se vuelva demasiado poderosa",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Para que una parte no se vuelva demasiado poderosa\"."
+},
+{
+  "question": "Mencione las tres ramas del gobierno.",
+  "options": [
+    "Federal, estatal y local",
+    "Legislativa, ejecutiva y judicial",
+    "Congreso, presidente y estados",
+    "Cámara, Senado y tribunales"
+  ],
+  "correctAnswer": "Legislativa, ejecutiva y judicial",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Legislativa, ejecutiva y judicial\"."
+},
+{
+  "question": "¿El Presidente de los Estados Unidos está a cargo de qué rama del gobierno?",
+  "options": [
+    "Rama legislativa",
+    "Rama judicial",
+    "Rama ejecutiva",
+    "Rama federal"
+  ],
+  "correctAnswer": "Rama ejecutiva",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Rama ejecutiva\"."
+},
+{
+  "question": "¿Qué parte del gobierno federal escribe las leyes?",
+  "options": [
+    "El Congreso (de los EE.UU.)",
+    "La Corte Suprema",
+    "El Presidente",
+    "La rama ejecutiva"
+  ],
+  "correctAnswer": "El Congreso (de los EE.UU.)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El Congreso (de los EE.UU.)\"."
+},
+{
+  "question": "¿Cuáles son las dos partes del Congreso de los EE.UU.?",
+  "options": [
+    "La Cámara de Representantes y el Senado",
+    "La Cámara Alta y la Cámara Baja",
+    "El Congreso y el Parlamento",
+    "Los Demócratas y los Republicanos"
+  ],
+  "correctAnswer": "La Cámara de Representantes y el Senado",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Cámara de Representantes y el Senado\"."
+},
+{
+  "question": "¿Nombre una rama o parte del gobierno?",
+  "options": [
+    "Congreso",
+    "Los partidos políticos",
+    "El ejército",
+    "Los medios de comunicación"
+  ],
+  "correctAnswer": "Congreso",
+  "explanation": "\"Congreso\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué hace la rama judicial?",
+  "options": [
+    "Revisa las leyes",
+    "Escribe las leyes",
+    "Hace cumplir las leyes",
+    "Propone las leyes"
+  ],
+  "correctAnswer": "Revisa las leyes",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Revisa las leyes\"."
+},
+{
+  "question": "¿Cuál es la corte más alta de los Estados Unidos?",
+  "options": [
+    "La Corte Suprema (de los EE.UU.)",
+    "La Corte Federal de Apelaciones",
+    "La Corte de Distrito de los EE.UU.",
+    "La Corte del Circuito"
+  ],
+  "correctAnswer": "La Corte Suprema (de los EE.UU.)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Corte Suprema (de los EE.UU.)\"."
+},
+{
+  "question": "¿Cuántos jueces hay en la Corte Suprema?",
+  "options": [
+    "Nueve (9)",
+    "Siete (7)",
+    "Once (11)",
+    "Doce (12)"
+  ],
+  "correctAnswer": "Nueve (9)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Nueve (9)\"."
+},
+{
+  "question": "¿Quién es el Presidente del Tribunal Supremo de los Estados Unidos ahora?",
+  "options": [
+    "John Roberts (John G. Roberts, Jr.)",
+    "Brett Kavanaugh",
+    "Clarence Thomas",
+    "Samuel Alito"
+  ],
+  "correctAnswer": "John Roberts (John G. Roberts, Jr.)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"John Roberts (John G. Roberts, Jr.)\"."
+},
+{
+  "question": "¿Quién es uno de los senadores de su estado ahora?",
+  "options": [
+    "Las respuestas variarán. [Los residentes del Distrito de Columbia y los territorios de EE.UU. deben responder que D.C. (o el territorio donde vive el solicitante) no tiene senadores de EE.UU.]",
+    "Joe Biden",
+    "Kamala Harris",
+    "Nancy Pelosi"
+  ],
+  "correctAnswer": "Las respuestas variarán. [Los residentes del Distrito de Columbia y los territorios de EE.UU. deben responder que D.C. (o el territorio donde vive el solicitante) no tiene senadores de EE.UU.]",
+  "explanation": "Las respuestas variarán según el estado. Los residentes del Distrito de Columbia y los territorios de EE.UU. deben responder que D.C. (o el territorio donde vive el solicitante) no tiene senadores de EE.UU."
+},
+{
+  "question": "¿Cuántos senadores de EE.UU. hay?",
+  "options": [
+    "Cien (100)",
+    "Cincuenta (50)",
+    "Cuatrocientos treinta y cinco (435)",
+    "Doscientos (200)"
+  ],
+  "correctAnswer": "Cien (100)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Cien (100)\"."
+},
+{
+  "question": "¿Por cuántos años elegimos a un senador de los EE.UU.?",
+  "options": [
+    "Seis (6)",
+    "Dos (2)",
+    "Cuatro (4)",
+    "Ocho (8)"
+  ],
+  "correctAnswer": "Seis (6)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Seis (6)\"."
+},
+{
+  "question": "¿La Cámara de Representantes tiene cuántos miembros con derecho a voto?",
+  "options": [
+    "Cuatrocientos treinta y cinco (435)",
+    "Cien (100)",
+    "Cincuenta (50)",
+    "Trescientos ochenta y cinco (385)"
+  ],
+  "correctAnswer": "Cuatrocientos treinta y cinco (435)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Cuatrocientos treinta y cinco (435)\"."
+},
+{
+  "question": "¿Por cuántos años elegimos a un representante de los EE.UU.?",
+  "options": [
+    "Dos (2)",
+    "Cuatro (4)",
+    "Seis (6)",
+    "Tres (3)"
+  ],
+  "correctAnswer": "Dos (2)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Dos (2)\"."
+},
+{
+  "question": "¿Quién es el representante de EE.UU. de su distrito del Congreso ahora?",
+  "options": [
+    "Las respuestas variarán. [Los residentes de territorios con delegados no votantes o comisionados residentes pueden proporcionar el nombre de ese delegado o comisionado. También es aceptable cualquier declaración de que el territorio no tiene representantes (con derecho a voto) en el Congreso.]",
+    "Joe Biden",
+    "Kamala Harris",
+    "Nancy Pelosi"
+  ],
+  "correctAnswer": "Las respuestas variarán. [Los residentes de territorios con delegados no votantes o comisionados residentes pueden proporcionar el nombre de ese delegado o comisionado. También es aceptable cualquier declaración de que el territorio no tiene representantes (con derecho a voto) en el Congreso.]",
+  "explanation": "Las respuestas variarán según el distrito del Congreso. Los residentes de territorios con delegados no votantes o comisionados residentes pueden proporcionar el nombre de ese delegado o comisionado."
+},
+{
+  "question": "¿Quién representa a un senador de los EE.UU.?",
+  "options": [
+    "Todas las personas del estado",
+    "Solo los votantes del estado",
+    "Solo los miembros de su partido",
+    "Solo las personas de su distrito"
+  ],
+  "correctAnswer": "Todas las personas del estado",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Todas las personas del estado\"."
+},
+{
+  "question": "¿Quién representa a un miembro de la Cámara de Representantes?",
+  "options": [
+    "Las personas de su distrito",
+    "Todas las personas del estado",
+    "Solo los votantes del distrito",
+    "Solo los miembros de su partido"
+  ],
+  "correctAnswer": "Las personas de su distrito",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Las personas de su distrito\"."
+},
+{
+  "question": "¿Qué decide cada estado que tiene un número determinado de representantes de los EE.UU.?",
+  "options": [
+    "La población (del estado)",
+    "El tamaño del estado",
+    "Los ingresos del estado",
+    "La edad del estado"
+  ],
+  "correctAnswer": "La población (del estado)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La población (del estado)\"."
+},
+{
+  "question": "¿Por cuántos años elegimos a un Presidente?",
+  "options": [
+    "Cuatro (4)",
+    "Dos (2)",
+    "Seis (6)",
+    "Ocho (8)"
+  ],
+  "correctAnswer": "Cuatro (4)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Cuatro (4)\"."
+},
+{
+  "question": "¿El Presidente es elegido por quién?",
+  "options": [
+    "El Colegio Electoral",
+    "El Congreso",
+    "El voto popular",
+    "La Corte Suprema"
+  ],
+  "correctAnswer": "El Colegio Electoral",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El Colegio Electoral\"."
+},
+{
+  "question": "¿En qué mes votamos por el Presidente?",
+  "options": [
+    "Noviembre",
+    "Enero",
+    "Octubre",
+    "Septiembre"
+  ],
+  "correctAnswer": "Noviembre",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Noviembre\"."
+},
+{
+  "question": "¿Cuál es el nombre del Presidente de los Estados Unidos ahora?",
+  "options": [
+    "Donald Trump",
+    "Joe Biden",
+    "Barack Obama",
+    "Kamala Harris"
+  ],
+  "correctAnswer": "Donald Trump",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Donald Trump\"."
+},
+{
+  "question": "¿Cuál es el nombre del Vicepresidente de los Estados Unidos ahora?",
+  "options": [
+    "J.D. Vance",
+    "Kamala Harris",
+    "Mike Pence",
+    "Tim Walz"
+  ],
+  "correctAnswer": "J.D. Vance",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"J.D. Vance\"."
+},
+{
+  "question": "Si el Presidente ya no puede servir, ¿quién se convierte en Presidente?",
+  "options": [
+    "El Vicepresidente (de los Estados Unidos)",
+    "El Presidente de la Cámara",
+    "El Presidente del Tribunal Supremo",
+    "El Secretario de Estado"
+  ],
+  "correctAnswer": "El Vicepresidente (de los Estados Unidos)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El Vicepresidente (de los Estados Unidos)\"."
+},
+{
+  "question": "¿Nombre uno de los trabajos del Vicepresidente.",
+  "options": [
+    "Asesora al Presidente (de los Estados Unidos)",
+    "Escribe las leyes",
+    "Nombra a los jueces de la Corte Suprema",
+    "Dirige el ejército"
+  ],
+  "correctAnswer": "Asesora al Presidente (de los Estados Unidos)",
+  "explanation": "\"Asesora al Presidente (de los Estados Unidos)\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "Si tanto el Presidente como el Vicepresidente ya no pueden servir, ¿quién se convierte en Presidente?",
+  "options": [
+    "El Presidente de la Cámara (de Representantes)",
+    "El Secretario de Estado",
+    "El Presidente del Tribunal Supremo",
+    "El Secretario de Defensa"
+  ],
+  "correctAnswer": "El Presidente de la Cámara (de Representantes)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El Presidente de la Cámara (de Representantes)\"."
+},
+{
+  "question": "¿Quién es el Comandante en Jefe de las fuerzas armadas?",
+  "options": [
+    "El Presidente (de los Estados Unidos)",
+    "El Secretario de Defensa",
+    "El Presidente del Estado Mayor Conjunto",
+    "El Vicepresidente"
+  ],
+  "correctAnswer": "El Presidente (de los Estados Unidos)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El Presidente (de los Estados Unidos)\"."
+},
+{
+  "question": "¿Nombre dos deberes del Presidente.",
+  "options": [
+    "Firma los proyectos de ley para convertirlos en leyes",
+    "Escribe las leyes",
+    "Declara la guerra",
+    "Nombra a los senadores"
+  ],
+  "correctAnswer": "Firma los proyectos de ley para convertirlos en leyes",
+  "explanation": "\"Firma los proyectos de ley para convertirlos en leyes\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Quién veta los proyectos de ley?",
+  "options": [
+    "El Presidente (de los Estados Unidos)",
+    "El Congreso",
+    "La Corte Suprema",
+    "El Vicepresidente"
+  ],
+  "correctAnswer": "El Presidente (de los Estados Unidos)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El Presidente (de los Estados Unidos)\"."
+},
+{
+  "question": "¿Qué hace el Gabinete del Presidente?",
+  "options": [
+    "Asesora al Presidente (de los Estados Unidos)",
+    "Escribe las leyes",
+    "Veta los proyectos de ley",
+    "Nombra a los jueces"
+  ],
+  "correctAnswer": "Asesora al Presidente (de los Estados Unidos)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Asesora al Presidente (de los Estados Unidos)\"."
+},
+{
+  "question": "¿Nombre dos puestos a nivel de gabinete.",
+  "options": [
+    "Secretario de Estado",
+    "Fiscal General",
+    "Presidente de la Cámara",
+    "Líder de la Mayoría del Senado"
+  ],
+  "correctAnswer": "Secretario de Estado",
+  "explanation": "\"Secretario de Estado\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué hace la rama judicial?",
+  "options": [
+    "Revisa las leyes",
+    "Escribe las leyes",
+    "Hace cumplir las leyes",
+    "Veta las leyes"
+  ],
+  "correctAnswer": "Revisa las leyes",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Revisa las leyes\"."
+},
+{
+  "question": "¿Qué es la revisión judicial?",
+  "options": [
+    "El poder de los tribunales de decir si una ley va en contra de la Constitución",
+    "El proceso de nombramiento de jueces",
+    "La revisión de sentencias criminales",
+    "El proceso de apelación"
+  ],
+  "correctAnswer": "El poder de los tribunales de decir si una ley va en contra de la Constitución",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El poder de los tribunales de decir si una ley va en contra de la Constitución\"."
+},
+{
+  "question": "¿Quién nomina a los jueces de la Corte Suprema?",
+  "options": [
+    "El Presidente (de los Estados Unidos)",
+    "El Congreso",
+    "El pueblo",
+    "Los jueces de la Corte Suprema actuales"
+  ],
+  "correctAnswer": "El Presidente (de los Estados Unidos)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"El Presidente (de los Estados Unidos)\"."
+},
+{
+  "question": "¿Nombre una cosa que solo el gobierno federal puede hacer.",
+  "options": [
+    "Declarar la guerra",
+    "Proporcionar educación",
+    "Emitir licencias de conducir",
+    "Establecer gobiernos locales"
+  ],
+  "correctAnswer": "Declarar la guerra",
+  "explanation": "\"Declarar la guerra\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Nombre una cosa que los gobiernos estatales pueden hacer.",
+  "options": [
+    "Proporcionar escuelas y educación",
+    "Declarar la guerra",
+    "Crear un ejército",
+    "Acuñar dinero"
+  ],
+  "correctAnswer": "Proporcionar escuelas y educación",
+  "explanation": "\"Proporcionar escuelas y educación\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cuál es la capital de su estado?",
+  "options": [
+    "Las respuestas variarán. [Los residentes del Distrito de Columbia deben responder que D.C. no es un estado y no tiene capital. Los residentes de los territorios de EE.UU. deben nombrar la capital del territorio.]",
+    "Washington, D.C.",
+    "Nueva York",
+    "Los Ángeles"
+  ],
+  "correctAnswer": "Las respuestas variarán. [Los residentes del Distrito de Columbia deben responder que D.C. no es un estado y no tiene capital. Los residentes de los territorios de EE.UU. deben nombrar la capital del territorio.]",
+  "explanation": "Las respuestas variarán según el estado. Los residentes del Distrito de Columbia deben responder que D.C. no es un estado y no tiene capital."
+},
+{
+  "question": "¿Cuáles son los dos partidos políticos principales en los Estados Unidos hoy en día?",
+  "options": [
+    "Demócrata y Republicano",
+    "Liberal y Conservador",
+    "Federalista y Antifederalista",
+    "Whig y Tory"
+  ],
+  "correctAnswer": "Demócrata y Republicano",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Demócrata y Republicano\"."
+},
+{
+  "question": "¿Cuál es el partido político del Presidente ahora?",
+  "options": [
+    "Republicano (Partido)",
+    "Demócrata (Partido)",
+    "Independiente",
+    "Libertario"
+  ],
+  "correctAnswer": "Republicano (Partido)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Republicano (Partido)\"."
+},
+{
+  "question": "¿Cuál es el nombre del Presidente de la Cámara de Representantes ahora?",
+  "options": [
+    "Mike Johnson",
+    "Nancy Pelosi",
+    "Kevin McCarthy",
+    "Paul Ryan"
+  ],
+  "correctAnswer": "Mike Johnson",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Mike Johnson\"."
+},
+{
+  "question": "¿Hay cuatro enmiendas a la Constitución sobre quién puede votar. Describa una de ellas.",
+  "options": [
+    "Ciudadanos de dieciocho (18) años o más (pueden votar).",
+    "Solo los hombres pueden votar.",
+    "Solo los propietarios pueden votar.",
+    "Se requiere una prueba de alfabetización."
+  ],
+  "correctAnswer": "Ciudadanos de dieciocho (18) años o más (pueden votar).",
+  "explanation": "\"Ciudadanos de dieciocho (18) años o más (pueden votar).\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Nombre una responsabilidad que es solo para los ciudadanos de los Estados Unidos?",
+  "options": [
+    "Formar parte de un jurado",
+    "Pagar impuestos",
+    "Obedecer la ley",
+    "Ir a la escuela"
+  ],
+  "correctAnswer": "Formar parte de un jurado",
+  "explanation": "\"Formar parte de un jurado\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Nombre un derecho solo para los ciudadanos de los Estados Unidos.",
+  "options": [
+    "Votar en una elección federal",
+    "Libertad de expresión",
+    "Libertad de religión",
+    "Portar armas"
+  ],
+  "correctAnswer": "Votar en una elección federal",
+  "explanation": "\"Votar en una elección federal\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Nombre dos derechos de todas las personas que viven en los Estados Unidos.",
+  "options": [
+    "Libertad de expresión",
+    "Derecho a votar",
+    "Derecho a postularse para cargos",
+    "Derecho a formar parte de un jurado"
+  ],
+  "correctAnswer": "Libertad de expresión",
+  "explanation": "\"Libertad de expresión\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué mostramos lealtad cuando decimos el Juramento de Lealtad?",
+  "options": [
+    "Los Estados Unidos",
+    "El Presidente",
+    "El Congreso",
+    "El Estado"
+  ],
+  "correctAnswer": "Los Estados Unidos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Los Estados Unidos\"."
+},
+{
+  "question": "¿Nombre dos promesas que los nuevos ciudadanos hacen en el Juramento de Lealtad a los Estados Unidos.",
+  "options": [
+    "Renunciar a la lealtad a otros países",
+    "Nunca salir de los Estados Unidos",
+    "Aprender inglés",
+    "Comprar una casa"
+  ],
+  "correctAnswer": "Renunciar a la lealtad a otros países",
+  "explanation": "\"Renunciar a la lealtad a otros países\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cómo pueden las personas convertirse en ciudadanos de los Estados Unidos?",
+  "options": [
+    "Naturalizarse",
+    "Comprar propiedad",
+    "Casarse con un estadounidense",
+    "Vivir en EE.UU. durante 10 años"
+  ],
+  "correctAnswer": "Naturalizarse",
+  "explanation": "\"Naturalizarse\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cuáles son dos ejemplos de participación cívica en los Estados Unidos?",
+  "options": [
+    "Votar",
+    "Comprar un auto",
+    "Ver televisión",
+    "Ir de vacaciones"
+  ],
+  "correctAnswer": "Votar",
+  "explanation": "\"Votar\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué es un derecho o libertad de la Primera Enmienda?",
+  "options": [
+    "Libertad de expresión",
+    "Derecho a portar armas",
+    "Derecho a un juicio rápido",
+    "Protección contra registros no razonables"
+  ],
+  "correctAnswer": "Libertad de expresión",
+  "explanation": "\"Libertad de expresión\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cuántas enmiendas tiene la Constitución?",
+  "options": [
+    "Veintisiete (27)",
+    "Diez (10)",
+    "Veinticinco (25)",
+    "Treinta (30)"
+  ],
+  "correctAnswer": "Veintisiete (27)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Veintisiete (27)\"."
+},
+{
+  "question": "¿Qué hizo la Declaración de Emancipación?",
+  "options": [
+    "Liberó a los esclavos",
+    "Declaró la independencia",
+    "Terminó la Guerra Civil",
+    "Creó la Constitución"
+  ],
+  "correctAnswer": "Liberó a los esclavos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Liberó a los esclavos\"."
+},
+{
+  "question": "¿Qué hizo Susan B. Anthony?",
+  "options": [
+    "Luchó por los derechos de las mujeres",
+    "Escribió la Declaración de Independencia",
+    "Fue la primera mujer juez de la Corte Suprema",
+    "Fundó la Cruz Roja"
+  ],
+  "correctAnswer": "Luchó por los derechos de las mujeres",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Luchó por los derechos de las mujeres\"."
+},
+{
+  "question": "¿Nombre una guerra en la que luchó Estados Unidos en el siglo XIX (1800).",
+  "options": [
+    "Guerra Civil",
+    "Primera Guerra Mundial",
+    "Segunda Guerra Mundial",
+    "Guerra de Vietnam"
+  ],
+  "correctAnswer": "Guerra Civil",
+  "explanation": "\"Guerra Civil\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Nombre la guerra de EE.UU. entre el Norte y el Sur.",
+  "options": [
+    "La Guerra Civil",
+    "La Guerra Revolucionaria",
+    "La Guerra de 1812",
+    "La Guerra Mexicano-Estadounidense"
+  ],
+  "correctAnswer": "La Guerra Civil",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Guerra Civil\"."
+},
+{
+  "question": "¿Nombre un problema que llevó a la Guerra Civil.",
+  "options": [
+    "Esclavitud",
+    "Impuestos",
+    "Comercio",
+    "Tierras"
+  ],
+  "correctAnswer": "Esclavitud",
+  "explanation": "\"Esclavitud\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué era una cosa importante que hizo Abraham Lincoln?",
+  "options": [
+    "Liberó a los esclavos (Proclamación de Emancipación)",
+    "Escribió la Declaración de Independencia",
+    "Compró Louisiana",
+    "Firmó la Constitución"
+  ],
+  "correctAnswer": "Liberó a los esclavos (Proclamación de Emancipación)",
+  "explanation": "\"Liberó a los esclavos (Proclamación de Emancipación)\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué hizo la Proclamación de Emancipación?",
+  "options": [
+    "Liberó a los esclavos",
+    "Declaró la independencia",
+    "Terminó la Guerra Civil",
+    "Creó la Constitución"
+  ],
+  "correctAnswer": "Liberó a los esclavos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Liberó a los esclavos\"."
+},
+{
+  "question": "¿Nombre una guerra en la que luchó Estados Unidos en el siglo XX (1900).",
+  "options": [
+    "Primera Guerra Mundial",
+    "Guerra Civil",
+    "Guerra de 1812",
+    "Guerra Revolucionaria"
+  ],
+  "correctAnswer": "Primera Guerra Mundial",
+  "explanation": "\"Primera Guerra Mundial\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Nombre una cosa que pasó el 11 de septiembre de 2001.",
+  "options": [
+    "Terroristas atacaron a los Estados Unidos",
+    "El presidente fue asesinado",
+    "Comenzó una guerra",
+    "Hubo un huracán"
+  ],
+  "correctAnswer": "Terroristas atacaron a los Estados Unidos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Terroristas atacaron a los Estados Unidos\"."
+},
+{
+  "question": "¿Nombre una tribu indígena americana en los Estados Unidos.",
+  "options": [
+    "Apache",
+    "Azteca",
+    "Inca",
+    "Maya"
+  ],
+  "correctAnswer": "Apache",
+  "explanation": "\"Apache\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Nombre un ejemplo de una innovación estadounidense.",
+  "options": [
+    "Bombilla",
+    "Motor de vapor",
+    "Imprenta",
+    "Brújula"
+  ],
+  "correctAnswer": "Bombilla",
+  "explanation": "\"Bombilla\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cuál es la capital de los Estados Unidos?",
+  "options": [
+    "Washington, D.C.",
+    "Nueva York",
+    "Los Ángeles",
+    "Filadelfia"
+  ],
+  "correctAnswer": "Washington, D.C.",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Washington, D.C.\"."
+},
+{
+  "question": "¿Dónde está la Estatua de la Libertad?",
+  "options": [
+    "Puerto de Nueva York",
+    "Washington, D.C.",
+    "San Francisco",
+    "Boston"
+  ],
+  "correctAnswer": "Puerto de Nueva York",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Puerto de Nueva York\"."
+},
+{
+  "question": "¿Por qué la bandera tiene 13 rayas?",
+  "options": [
+    "(Porque había) 13 colonias originales",
+    "Por los 13 autores de la Constitución",
+    "Por los primeros 13 presidentes",
+    "Por los 13 jueces de la Corte Suprema"
+  ],
+  "correctAnswer": "(Porque había) 13 colonias originales",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"(Porque había) 13 colonias originales\"."
+},
+{
+  "question": "¿Por qué la bandera tiene 50 estrellas?",
+  "options": [
+    "(Porque hay) una estrella por cada estado",
+    "Por los 50 firmantes de la Constitución",
+    "Por los primeros 50 senadores",
+    "Por los 50 años de independencia"
+  ],
+  "correctAnswer": "(Porque hay) una estrella por cada estado",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"(Porque hay) una estrella por cada estado\"."
+},
+{
+  "question": "¿Cuál es el nombre del himno nacional?",
+  "options": [
+    "La Bandera Estrellada (The Star-Spangled Banner)",
+    "America the Beautiful",
+    "My Country 'Tis of Thee",
+    "God Bless America"
+  ],
+  "correctAnswer": "La Bandera Estrellada (The Star-Spangled Banner)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Bandera Estrellada (The Star-Spangled Banner)\"."
+},
+{
+  "question": "El primer lema de la Nación fue \"E Pluribus Unum.\" ¿Qué significa eso?",
+  "options": [
+    "De muchos, uno",
+    "En Dios confiamos",
+    "Libertad y justicia para todos",
+    "Unidos permanecemos"
+  ],
+  "correctAnswer": "De muchos, uno",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"De muchos, uno\"."
+},
+{
+  "question": "¿Qué es el Día de la Independencia?",
+  "options": [
+    "Un día festivo para celebrar la independencia de EE.UU. (de Gran Bretaña)",
+    "El cumpleaños de George Washington",
+    "El fin de la Guerra Civil",
+    "La firma de la Constitución"
+  ],
+  "correctAnswer": "Un día festivo para celebrar la independencia de EE.UU. (de Gran Bretaña)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Un día festivo para celebrar la independencia de EE.UU. (de Gran Bretaña)\"."
+},
+{
+  "question": "¿Mencione tres días festivos nacionales de EE.UU.",
+  "options": [
+    "Día de Año Nuevo",
+    "Día de San Valentín",
+    "Día de San Patricio",
+    "Halloween"
+  ],
+  "correctAnswer": "Día de Año Nuevo",
+  "explanation": "\"Día de Año Nuevo\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué es el Día de los Caídos?",
+  "options": [
+    "Un día festivo para honrar a los soldados que murieron en servicio militar",
+    "El cumpleaños de los fundadores",
+    "Un día para recordar la Guerra Civil",
+    "El fin de la Segunda Guerra Mundial"
+  ],
+  "correctAnswer": "Un día festivo para honrar a los soldados que murieron en servicio militar",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Un día festivo para honrar a los soldados que murieron en servicio militar\"."
+},
+{
+  "question": "¿Qué es el Día de los Veteranos?",
+  "options": [
+    "Un día festivo para honrar a las personas en el ejército (de los EE.UU.)",
+    "El fin de la guerra",
+    "El cumpleaños del general Washington",
+    "El Día de la Independencia"
+  ],
+  "correctAnswer": "Un día festivo para honrar a las personas en el ejército (de los EE.UU.)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Un día festivo para honrar a las personas en el ejército (de los EE.UU.)\"."
+},
+{
+  "question": "¿Quién fue el primer Presidente?",
+  "options": [
+    "George Washington",
+    "Thomas Jefferson",
+    "John Adams",
+    "Benjamin Franklin"
+  ],
+  "correctAnswer": "George Washington",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"George Washington\"."
+},
+{
+  "question": "¿Quién es el 'Padre de Nuestro País'?",
+  "options": [
+    "George Washington",
+    "Thomas Jefferson",
+    "Abraham Lincoln",
+    "Benjamin Franklin"
+  ],
+  "correctAnswer": "George Washington",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"George Washington\"."
+},
+{
+  "question": "¿Quién fue presidente durante la Primera Guerra Mundial?",
+  "options": [
+    "Woodrow Wilson",
+    "Theodore Roosevelt",
+    "William Taft",
+    "Warren Harding"
+  ],
+  "correctAnswer": "Woodrow Wilson",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Woodrow Wilson\"."
+},
+{
+  "question": "¿Quién fue presidente durante la Gran Depresión y la Segunda Guerra Mundial?",
+  "options": [
+    "Franklin Roosevelt",
+    "Harry Truman",
+    "Herbert Hoover",
+    "Dwight Eisenhower"
+  ],
+  "correctAnswer": "Franklin Roosevelt",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Franklin Roosevelt\"."
+},
+{
+  "question": "¿A quién se le atribuye la escritura de la Declaración de Independencia?",
+  "options": [
+    "Thomas Jefferson",
+    "George Washington",
+    "Benjamin Franklin",
+    "John Adams"
+  ],
+  "correctAnswer": "Thomas Jefferson",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Thomas Jefferson\"."
+},
+{
+  "question": "¿Cuándo se escribió la Declaración de Independencia?",
+  "options": [
+    "1776",
+    "1787",
+    "1791",
+    "1783"
+  ],
+  "correctAnswer": "1776",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"1776\"."
+},
+{
+  "question": "Los Documentos Federalistas apoyaron la aprobación de la Constitución de los EE.UU. Mencione uno de los escritores.",
+  "options": [
+    "James Madison",
+    "Thomas Jefferson",
+    "George Washington",
+    "Samuel Adams"
+  ],
+  "correctAnswer": "James Madison",
+  "explanation": "\"James Madison\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué es una cosa que Benjamin Franklin es famoso por hacer?",
+  "options": [
+    "Diplomático de los EE.UU.",
+    "Primer presidente",
+    "Escribió la Constitución",
+    "General de la Guerra Civil"
+  ],
+  "correctAnswer": "Diplomático de los EE.UU.",
+  "explanation": "\"Diplomático de los EE.UU.\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "Benjamin Franklin es famoso por muchas cosas. Mencione una.",
+  "options": [
+    "Diplomático de los EE.UU.",
+    "Primer presidente",
+    "Escribió la Constitución",
+    "General de la Guerra Civil"
+  ],
+  "correctAnswer": "Diplomático de los EE.UU.",
+  "explanation": "\"Diplomático de los EE.UU.\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Quién se llama el 'Padre de la Constitución'?",
+  "options": [
+    "James Madison",
+    "George Washington",
+    "Thomas Jefferson",
+    "Benjamin Franklin"
+  ],
+  "correctAnswer": "James Madison",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"James Madison\"."
+},
+{
+  "question": "George Washington es famoso por muchas cosas. Mencione una.",
+  "options": [
+    "Padre de Nuestro País",
+    "Escribió la Declaración de Independencia",
+    "Liberó a los esclavos",
+    "Presidente durante la Guerra Civil"
+  ],
+  "correctAnswer": "Padre de Nuestro País",
+  "explanation": "\"Padre de Nuestro País\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cuál es una razón por la que los colonos vinieron a América?",
+  "options": [
+    "Libertad",
+    "Para conquistar tierras",
+    "Para comerciar con Asia",
+    "Para encontrar oro"
+  ],
+  "correctAnswer": "Libertad",
+  "explanation": "\"Libertad\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Quiénes vivían en América antes de que llegaran los europeos?",
+  "options": [
+    "Indios americanos",
+    "Asiáticos",
+    "Africanos",
+    "Australianos"
+  ],
+  "correctAnswer": "Indios americanos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Indios americanos\"."
+},
+{
+  "question": "¿Qué grupo de personas fue traído a América y vendido como esclavos?",
+  "options": [
+    "Africanos",
+    "Asiáticos",
+    "Europeos",
+    "Indios americanos"
+  ],
+  "correctAnswer": "Africanos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Africanos\"."
+},
+{
+  "question": "¿Qué hicieron los colonos después de la Declaración de Independencia?",
+  "options": [
+    "Lucharon contra los británicos",
+    "Firmaron la paz con Gran Bretaña",
+    "Regresaron a Europa",
+    "Se rindieron"
+  ],
+  "correctAnswer": "Lucharon contra los británicos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Lucharon contra los británicos\"."
+},
+{
+  "question": "¿Cuándo se escribió la Constitución?",
+  "options": [
+    "1787",
+    "1776",
+    "1791",
+    "1783"
+  ],
+  "correctAnswer": "1787",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"1787\"."
+},
+{
+  "question": "Los Documentos Federalistas apoyaron la aprobación de la Constitución de los EE.UU. Mencione uno de los escritores.",
+  "options": [
+    "James Madison",
+    "Thomas Jefferson",
+    "George Washington",
+    "Samuel Adams"
+  ],
+  "correctAnswer": "James Madison",
+  "explanation": "\"James Madison\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Por qué los colonos lucharon contra los británicos?",
+  "options": [
+    "Por los altos impuestos (impuestos sin representación)",
+    "Por la tierra",
+    "Por la religión",
+    "Por el comercio"
+  ],
+  "correctAnswer": "Por los altos impuestos (impuestos sin representación)",
+  "explanation": "\"Por los altos impuestos (impuestos sin representación)\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cuántas colonias originales había?",
+  "options": [
+    "Trece (13)",
+    "Diez (10)",
+    "Quince (15)",
+    "Veinte (20)"
+  ],
+  "correctAnswer": "Trece (13)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Trece (13)\"."
+},
+{
+  "question": "¿Qué pasó en la Convención Constitucional?",
+  "options": [
+    "La Constitución fue escrita.",
+    "Se declaró la independencia.",
+    "Se liberaron los esclavos.",
+    "Se terminó la guerra."
+  ],
+  "correctAnswer": "La Constitución fue escrita.",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Constitución fue escrita.\"."
+},
+{
+  "question": "¿Por qué Estados Unidos entró en la Guerra de Corea?",
+  "options": [
+    "Para detener la propagación del comunismo",
+    "Para ayudar a Japón",
+    "Para conquistar territorio",
+    "Para obtener recursos naturales"
+  ],
+  "correctAnswer": "Para detener la propagación del comunismo",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Para detener la propagación del comunismo\"."
+},
+{
+  "question": "¿Por qué Estados Unidos entró en la Guerra de Vietnam?",
+  "options": [
+    "Para detener la propagación del comunismo",
+    "Los terroristas atacaron a Estados Unidos",
+    "Ayudaron a las personas a entender la Constitución (de los EE.UU.)",
+    "Secretario de Vivienda y Desarrollo Urbano"
+  ],
+  "correctAnswer": "Para detener la propagación del comunismo",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Para detener la propagación del comunismo\"."
+},
+{
+  "question": "¿Qué hizo el movimiento de derechos civiles?",
+  "options": [
+    "Luchó para terminar la discriminación racial",
+    "Legislatura (de EE.UU. o nacional)",
+    "Define los poderes del gobierno• Define las partes del gobierno",
+    "(Batalla de) Gettysburg"
+  ],
+  "correctAnswer": "Luchó para terminar la discriminación racial",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Luchó para terminar la discriminación racial\"."
+},
+{
+  "question": "Martin Luther King, Jr. es famoso por muchas cosas. Mencione una.",
+  "options": [
+    "Luchó por los derechos civiles",
+    "Libertad de peticionar al gobierno",
+    "Secretario del Tesoro",
+    "Hace el presupuesto federal"
+  ],
+  "correctAnswer": "Luchó por los derechos civiles",
+  "explanation": "\"Luchó por los derechos civiles\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Por qué Estados Unidos entró en la Guerra del Golfo Pérsico?",
+  "options": [
+    "Para forzar al ejército iraquí a salir de Kuwait",
+    "Gobierno limitado",
+    "Obedecer la ley",
+    "Contactar a funcionarios electos"
+  ],
+  "correctAnswer": "Para forzar al ejército iraquí a salir de Kuwait",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Para forzar al ejército iraquí a salir de Kuwait\"."
+},
+{
+  "question": "¿Qué evento importante sucedió el 11 de septiembre de 2001 en los Estados Unidos?",
+  "options": [
+    "Los terroristas atacaron a Estados Unidos",
+    "(Porque hay) una estrella por cada estado",
+    "Crear un ejército",
+    "Define los poderes del gobierno• Define las partes del gobierno"
+  ],
+  "correctAnswer": "Los terroristas atacaron a Estados Unidos",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Los terroristas atacaron a Estados Unidos\"."
+},
+{
+  "question": "Mencione un conflicto militar de EE.UU. después de los ataques del 11 de septiembre de 2001.",
+  "options": [
+    "Guerra (Global) contra el Terror",
+    "Unirse a un grupo cívico",
+    "Marcha de Sherman",
+    "General del Ejército Continental"
+  ],
+  "correctAnswer": "Guerra (Global) contra el Terror",
+  "explanation": "\"Guerra (Global) contra el Terror\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "Mencione una tribu indígena americana en los Estados Unidos.",
+  "options": [
+    "Apache",
+    "Constitución (de los EE.UU.)",
+    "Todos nos convertimos en uno",
+    "Los soldados británicos se quedaron en las casas de los estadounidenses (alojamiento, acuartelamiento)• No tenían autogobierno• Masacre de Boston• Motín del Té de Boston (Ley del Té)• Ley del Timbre"
+  ],
+  "correctAnswer": "Apache",
+  "explanation": "\"Apache\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "Mencione un ejemplo de una innovación estadounidense.",
+  "options": [
+    "Bombilla",
+    "(Rendición en) Appomattox",
+    "Personas en su distrito",
+    "Uno de los escritores de los Documentos Federalistas"
+  ],
+  "correctAnswer": "Bombilla",
+  "explanation": "\"Bombilla\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Cuál es la capital de los Estados Unidos?",
+  "options": [
+    "Washington, D.C.",
+    "Derechos naturales",
+    "El Vicepresidente (de los Estados Unidos)",
+    "Asesora al Presidente (de los Estados Unidos)"
+  ],
+  "correctAnswer": "Washington, D.C.",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Washington, D.C.\"."
+},
+{
+  "question": "¿Dónde está la Estatua de la Libertad?",
+  "options": [
+    "Puerto de Nueva York",
+    "Washington cruzando el Delaware (Batalla de Trenton)",
+    "Libertad",
+    "Día de los Presidentes (Cumpleaños de Washington)"
+  ],
+  "correctAnswer": "Puerto de Nueva York",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Puerto de Nueva York\"."
+},
+    {
+  "question": "¿Por qué la bandera tiene 13 rayas?",
+  "options": [
+    "(Porque había) 13 colonias originales",
+    "Actas Intolerables (Coercitivas)",
+    "Ayudar con una campaña",
+    "Los derechos (básicos) de las personas que viven en los Estados Unidos"
+  ],
+  "correctAnswer": "(Porque había) 13 colonias originales",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"(Porque había) 13 colonias originales\"."
+},
+{
+  "question": "¿Por qué la bandera tiene 50 estrellas?",
+  "options": [
+    "(Porque hay) una estrella por cada estado",
+    "Servir en el ejército",
+    "Congreso (de los EE.UU.)",
+    "Secretario de Guerra (Defensa)"
+  ],
+  "correctAnswer": "(Porque hay) una estrella por cada estado",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"(Porque hay) una estrella por cada estado\"."
+},
+{
+  "question": "¿Cuál es el nombre del himno nacional?",
+  "options": [
+    "La Bandera Estrellada (The Star-Spangled Banner)",
+    "Susan B. Anthony",
+    "Puerto de Nueva York",
+    "La Carta Magna"
+  ],
+  "correctAnswer": "La Bandera Estrellada (The Star-Spangled Banner)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"La Bandera Estrellada (The Star-Spangled Banner)\"."
+},
+{
+  "question": "El primer lema de la Nación fue \"E Pluribus Unum.\" ¿Qué significa eso?",
+  "options": [
+    "De muchos, uno",
+    "Proporcionar escuelas y educación",
+    "Nosotros el pueblo",
+    "(Porque las rayas) representan las colonias originales"
+  ],
+  "correctAnswer": "De muchos, uno",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"De muchos, uno\"."
+},
+{
+  "question": "¿Qué es el Día de la Independencia?",
+  "options": [
+    "Un día festivo para celebrar la independencia de EE.UU. (de Gran Bretaña)",
+    "Departamentos y agencias federales",
+    "Legislatura (de EE.UU. o nacional)",
+    "Congreso, presidente y los tribunales"
+  ],
+  "correctAnswer": "Un día festivo para celebrar la independencia de EE.UU. (de Gran Bretaña)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Un día festivo para celebrar la independencia de EE.UU. (de Gran Bretaña)\"."
+},
+{
+  "question": "Mencione tres días festivos nacionales de EE.UU.",
+  "options": [
+    "Día de Año Nuevo",
+    "Impuestos sin representación",
+    "Para seguir más de cerca la opinión pública",
+    "Derechos naturales"
+  ],
+  "correctAnswer": "Día de Año Nuevo",
+  "explanation": "\"Día de Año Nuevo\" es una de las respuestas aceptables listadas por USCIS para esta pregunta."
+},
+{
+  "question": "¿Qué es el Día de los Caídos?",
+  "options": [
+    "Un día festivo para honrar a los soldados que murieron en servicio militar",
+    "Hace cumplir las leyes",
+    "Pagar impuestos",
+    "Libertad de expresión• Libertad de palabra• Libertad de reunión"
+  ],
+  "correctAnswer": "Un día festivo para honrar a los soldados que murieron en servicio militar",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Un día festivo para honrar a los soldados que murieron en servicio militar\"."
+},
+{
+  "question": "¿Qué es el Día de los Veteranos?",
+  "options": [
+    "Un día festivo para honrar a las personas en el ejército (de los EE.UU.)",
+    "Para oponerse a las Potencias Centrales (Alemania, Austria-Hungría, el Imperio Otomano y Bulgaria)",
+    "Congreso (de los EE.UU.)",
+    "El cumpleaños del país"
+  ],
+  "correctAnswer": "Un día festivo para honrar a las personas en el ejército (de los EE.UU.)",
+  "explanation": "Según la lista oficial del examen de civismo de USCIS 2025, la respuesta correcta es \"Un día festivo para honrar a las personas en el ejército (de los EE.UU.)\"."
+}
+
+  ]
+    
+  
+}

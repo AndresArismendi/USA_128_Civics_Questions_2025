@@ -4,7 +4,6 @@ import Test from './components/Test.jsx'
 import StartPage from './components/StartPage.jsx'
 import About from './components/About.jsx'
 
-const QUIZ_DATA_URL = '/quiz-data.json'
 const EXAM_QUESTION_COUNT = 20
 const EXAM_PASS_THRESHOLD = 12
 const QUICK_QUESTION_COUNT = 10
@@ -19,28 +18,42 @@ function shuffleArray(array) {
 }
 
 function App() {
-  const [rawQuizData, setRawQuizData] = useState(null)
+  const [rawQuizDataEn, setRawQuizDataEn] = useState(null)
+  const [rawQuizDataEs, setRawQuizDataEs] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
   const [selectedMode, setSelectedMode] = useState(null)
+  const [selectedLanguage, setSelectedLanguage] = useState(null)
   const [sessionKey, setSessionKey] = useState(0)
   const [showAbout, setShowAbout] = useState(false)
 
+  // Load both language files at once
   useEffect(() => {
-    fetch(QUIZ_DATA_URL)
-      .then((res) => {
-        if (!res.ok) throw new Error('Unable to load the questionnaire.')
-        return res.json()
+    setLoading(true)
+    Promise.all([
+      fetch('/quiz-data.json').then(res => res.json()),
+      fetch('/quiz-data-es.json').then(res => res.json())
+    ])
+      .then(([en, es]) => {
+        setRawQuizDataEn(en)
+        setRawQuizDataEs(es)
+        setLoading(false)
       })
-      .then((data) => {
-        if (!data.questions || !Array.isArray(data.questions)) {
-          throw new Error('Invalid questionnaire format. Expected a "questions" array.')
-        }
-        setRawQuizData(data)
+      .catch(() => {
+        setError('Error loading quiz data')
+        setLoading(false)
       })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false))
   }, [])
+
+  // Handler that now takes both mode and language
+  const handleSelectMode = (mode, lang) => {
+    setSelectedMode(mode)
+    setSelectedLanguage(lang)
+    setSessionKey(k => k + 1)
+  }
+
+  let rawQuizData = selectedLanguage === 'es' ? rawQuizDataEs : rawQuizDataEn
 
   const quizDataForMode = useMemo(() => {
     if (!rawQuizData || !selectedMode) return null
@@ -55,7 +68,7 @@ function App() {
       questions = shuffled.slice(0, Math.min(QUICK_QUESTION_COUNT, shuffled.length))
     }
     return { ...rawQuizData, questions }
-  }, [rawQuizData, selectedMode])
+  }, [rawQuizData, selectedMode, sessionKey])
 
   const passThreshold = selectedMode === 'exam' ? EXAM_PASS_THRESHOLD : undefined
 
@@ -75,7 +88,7 @@ function App() {
     )
   }
 
-  if (!rawQuizData?.questions?.length) {
+  if (!rawQuizDataEn?.questions?.length && !rawQuizDataEs?.questions?.length) {
     return (
       <div className="app-empty">
         <p>No questions available in this questionnaire.</p>
@@ -91,12 +104,12 @@ function App() {
     )
   }
 
-  if (!selectedMode) {
+  if (!selectedMode || !selectedLanguage) {
     return (
       <div className="app">
         <StartPage
-          totalQuestions={rawQuizData.questions.length}
-          onSelectMode={setSelectedMode}
+          totalQuestions={(rawQuizDataEn && rawQuizDataEn.questions.length) || 0}
+          onSelectMode={handleSelectMode}
           onShowAbout={() => setShowAbout(true)}
         />
       </div>
@@ -109,7 +122,7 @@ function App() {
         key={sessionKey}
         quizData={quizDataForMode}
         passThreshold={passThreshold}
-        onBackToStart={() => setSelectedMode(null)}
+        onBackToStart={() => {setSelectedMode(null); setSelectedLanguage(null)}}
         onRestart={() => setSessionKey((k) => k + 1)}
       />
     </div>
