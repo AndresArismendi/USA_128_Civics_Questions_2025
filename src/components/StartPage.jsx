@@ -20,6 +20,15 @@ const MODES = {
     buttonLabel: 'Begin Exam →',
     badge: 'Most Popular',
   },
+  real_no_options: {
+    id: 'real_no_options',
+    headerClass: 'card-header exam',
+    icon: '🗣️',
+    title: 'Real Test Exam Mode without options (20 Questions)',
+    description: 'Simulated official-style test with 20 randomized questions. Display only the question text (hidden until the user click a button to reveal the answer).',
+    buttonLabel: 'Begin Exam →',
+    badge: 'Advanced',
+  },
   quick: {
     id: 'quick',
     headerClass: 'card-header quick',
@@ -107,6 +116,19 @@ function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
             <p className="mode-card-desc">{MODES.exam.description}</p>
             <button type="button" className="mode-card-btn" onClick={() => setPendingMode('exam')}>
               {MODES.exam.buttonLabel}
+            </button>
+          </div>
+        </div>
+        <div className="mode-card">
+          <div className={MODES.real_no_options.headerClass}>
+            <span className="mode-badge" style={{ backgroundColor: '#2d3748' }}>{MODES.real_no_options.badge}</span>
+          </div>
+          <div className="mode-card-body">
+            <div className="mode-card-icon exam" aria-hidden="true">{MODES.real_no_options.icon}</div>
+            <h2 className="mode-card-title">{MODES.real_no_options.title}</h2>
+            <p className="mode-card-desc">{MODES.real_no_options.description}</p>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('real_no_options')}>
+              {MODES.real_no_options.buttonLabel}
             </button>
           </div>
         </div>

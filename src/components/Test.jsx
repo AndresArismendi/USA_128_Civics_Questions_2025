@@ -10,11 +10,12 @@ function shuffleOptions(array) {
   return copy
 }
 
-const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
+const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
   const { title = 'Civics Questionnaire', subtitle, questions } = quizData
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [showAnswer, setShowAnswer] = useState(false) // New state for Real Mode
   const [showResults, setShowResults] = useState(false)
   const [showAdBreak, setShowAdBreak] = useState(false)
   const [adCountdown, setAdCountdown] = useState(0)
@@ -25,6 +26,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
     () => shuffleOptions(currentQuestion.options),
     [currentQuestion]
   )
+  const isRealMode = mode === 'real_no_options'
   const isLastQuestion = currentQuestionIndex === questions.length - 1
   const questionNumber = currentQuestionIndex + 1
   const progressPercent = showResults
@@ -53,6 +55,11 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
       }
     }
   }
+
+  // Reset showAnswer state when question changes
+  useEffect(() => {
+    setShowAnswer(false)
+  }, [currentQuestionIndex])
 
   useEffect(() => {
     if (!showAdBreak || adCountdown <= 0) return
@@ -91,6 +98,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
     setCurrentQuestionIndex(0)
     setScore(0)
     setSelectedAnswer(null)
+    setShowAnswer(false)
     setShowResults(false)
   }
 
@@ -118,7 +126,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
             data-ad-client="ca-pub-5927169678303290"
             data-ad-slot="7586582915"
             data-ad-format="auto"
-            data-full-width-responsive="true"            
+            data-full-width-responsive="true"
           />
         </div>
         <p className="ad-countdown" aria-live="polite">
@@ -152,7 +160,11 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
           </p>
         )}
         <div className="feedback results">
-          Your score: <strong>{score} out of {questions.length}</strong> correct.
+          {mode !== 'real_no_options' ? (
+            <span>Your score: <strong>{score} out of {questions.length}</strong> correct.</span>
+          ) : (
+            <span>Exam completed.</span>
+          )}
         </div>
         <div className="results-actions">
           <button type="button" className="next-btn" onClick={handleRestart}>
@@ -184,21 +196,53 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart }) => {
         Question {questionNumber} of {questions.length}
       </p>
       <h2 className="question">{currentQuestion.question}</h2>
-      <ul className="options">
-        {optionsInRandomOrder.map((optionText) => (
-          <li key={optionText}>
-            <button
-              type="button"
-              className={getOptionClass(optionText)}
-              onClick={() => handleOptionClick(optionText)}
-              disabled={selectedAnswer !== null}
-            >
-              {optionText}
-            </button>
-          </li>
-        ))}
-      </ul>
-      {selectedAnswer !== null && (
+
+      {!isRealMode && (
+        <ul className="options">
+          {optionsInRandomOrder.map((optionText) => (
+            <li key={optionText}>
+              <button
+                type="button"
+                className={getOptionClass(optionText)}
+                onClick={() => handleOptionClick(optionText)}
+                disabled={selectedAnswer !== null}
+              >
+                {optionText}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {/* Real Exam Mode: Show Answer Button */}
+      {isRealMode && !showAnswer && (
+        <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+          <button
+            type="button"
+            className="next-btn"
+            onClick={() => setShowAnswer(true)}
+          >
+            Show Correct Answer
+          </button>
+        </div>
+      )}
+
+      {/* Real Exam Mode: Answer Revealed */}
+      {isRealMode && showAnswer && (
+        <>
+          <p className="feedback correct-feedback">
+            <strong>Correct Answer:</strong> {currentQuestion.correctAnswer}
+            <br />
+            {currentQuestion.explanation}
+          </p>
+          <button type="button" className="next-btn" onClick={handleNext}>
+            {isLastQuestion ? 'See Results' : 'Next Question'}
+          </button>
+        </>
+      )}
+
+      {/* Standard Mode: Feedback */}
+      {selectedAnswer !== null && !isRealMode && (
         <>
           <p className={feedbackClass}>
             {currentQuestion.explanation}

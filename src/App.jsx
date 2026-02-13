@@ -6,6 +6,7 @@ import About from './components/About.jsx'
 
 const EXAM_QUESTION_COUNT = 20
 const EXAM_PASS_THRESHOLD = 12
+const EXAM_NO_OPTIONS_QUESTION_COUNT = 20
 const QUICK_QUESTION_COUNT = 10
 
 function shuffleArray(array) {
@@ -64,6 +65,8 @@ function App() {
       questions = shuffled
     } else if (selectedMode === 'exam') {
       questions = shuffled.slice(0, Math.min(EXAM_QUESTION_COUNT, shuffled.length))
+    } else if (selectedMode === 'real_no_options') {
+      questions = shuffled.slice(0, Math.min(EXAM_NO_OPTIONS_QUESTION_COUNT, shuffled.length))
     } else {
       questions = shuffled.slice(0, Math.min(QUICK_QUESTION_COUNT, shuffled.length))
     }
@@ -120,9 +123,10 @@ function App() {
     <div className="app">
       <Test
         key={sessionKey}
+        mode={selectedMode}
         quizData={quizDataForMode}
         passThreshold={passThreshold}
-        onBackToStart={() => {setSelectedMode(null); setSelectedLanguage(null)}}
+        onBackToStart={() => { setSelectedMode(null); setSelectedLanguage(null) }}
         onRestart={() => setSessionKey((k) => k + 1)}
       />
     </div>
