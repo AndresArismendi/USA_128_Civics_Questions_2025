@@ -2,80 +2,45 @@
 
 .start-page {
   width: 100%;
-  max-width: 56rem;
+  max-width: 70rem;
   margin: 0 auto;
   padding: 2rem 1rem;
+  color: #fff;
 }
 
 .start-page-title {
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #1a365d;
+  color: #ffffff;
   text-align: center;
-  margin: 0 0 2rem 0;
+  margin: 0 0 3rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .mode-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .mode-cards {
-    grid-template-columns: 1fr;
-  }
+  align-items: stretch;
 }
 
 .mode-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #111822;
+  /* Very dark background */
+  border: 2px solid transparent;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(26, 54, 93, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: box-shadow 0.2s ease;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 2px;
+  /* For inner border effect if needed */
 }
 
 .mode-card:hover {
-  box-shadow: 0 4px 16px rgba(26, 54, 93, 0.12);
-}
-
-.mode-card-header,
-.card-header {
-  height: 8px;
-  flex-shrink: 0;
-}
-
-.card-header.study {
-  background-color: #1e3a5f;
-}
-
-.card-header.exam {
-  background-color: #8b4513;
-  position: relative;
-}
-
-.card-header.quick {
-  background-color: #2d6a4f;
-}
-
-.mode-badge {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #6b3410;
-  color: #fff;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0.25rem 0.5rem;
-  border-radius: 50px;
-  white-space: nowrap;
+  transform: translateY(-5px);
 }
 
 .mode-card-body {
@@ -85,121 +50,267 @@
   align-items: center;
   text-align: center;
   flex: 1;
+  background: #111827;
+  border-radius: 10px;
+  height: 100%;
 }
 
+/* --- Level 1: The 2-Minute Drill (Orange) --- */
+.mode-card.level-1 {
+  border-color: #f6ad55;
+  box-shadow: 0 0 15px rgba(246, 173, 85, 0.2);
+}
+
+.mode-card.level-1:hover {
+  box-shadow: 0 0 25px rgba(246, 173, 85, 0.4);
+}
+
+.mode-card.level-1 .mode-card-icon {
+  color: #f6ad55;
+  background: rgba(246, 173, 85, 0.1);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mode-card.level-1 .mode-card-btn {
+  border-color: #f6ad55;
+  color: #f6ad55;
+}
+
+.mode-card.level-1 .mode-card-btn:hover {
+  background: #f6ad55;
+  color: #1a202c;
+}
+
+/* --- Level 2: The Gauntlet (Blue) --- */
+.mode-card.level-2 {
+  border-color: #3b82f6;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+.mode-card.level-2:hover {
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+}
+
+.mode-card.level-2 .mode-card-icon {
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  /* Optional bg for icon */
+  border-radius: 8px;
+  /* Different shape */
+}
+
+.mode-card.level-2 .mode-card-btn {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+.mode-card.level-2 .mode-card-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+}
+
+/* --- The Final Boss (Red) --- */
+.mode-card.final-boss {
+  border-color: #f56565;
+  box-shadow: 0 0 15px rgba(245, 101, 101, 0.3);
+  margin-top: -1rem;
+  /* Make it pop out */
+  position: relative;
+  z-index: 10;
+}
+
+.mode-card.final-boss:hover {
+  box-shadow: 0 0 30px rgba(245, 101, 101, 0.5);
+}
+
+.mode-card.final-boss .castle-header-decoration {
+  /* Only visible if we add height/content, otherwise invisible */
+}
+
+.mode-card.final-boss .hearts-container {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.mode-card.final-boss .mode-card-icon {
+  color: #f56565;
+  text-shadow: 0 0 10px rgba(245, 101, 101, 0.8);
+}
+
+.mode-card.final-boss .mode-card-btn {
+  background: rgba(245, 101, 101, 0.1);
+  border-color: #f56565;
+  color: #f56565;
+}
+
+.mode-card.final-boss .mode-card-btn:hover {
+  background: #f56565;
+  color: #fff;
+}
+
+/* --- Bonus Round: Ghost Mode (Grey/Dark) --- */
+.mode-card.bonus-round {
+  border-color: #4a5568;
+  background: #1a202c;
+  opacity: 0.8;
+}
+
+.mode-card.bonus-round:hover {
+  border-color: #718096;
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(113, 128, 150, 0.2);
+}
+
+.mode-card.bonus-round .mode-badge-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.mode-card.bonus-round .mode-badge {
+  background: #4a5568;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.mode-card.bonus-round .mode-card-icon {
+  color: #a0aec0;
+}
+
+.mode-card.bonus-round .mode-card-btn {
+  border-color: #718096;
+  color: #a0aec0;
+  background: transparent;
+}
+
+.mode-card.bonus-round .mode-card-btn:hover {
+  border-color: #cbd5e0;
+  color: #fff;
+}
+
+
+/* --- Shared Styles --- */
 .mode-card-icon {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   font-size: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
-  color: #1e3a5f;
-}
-
-.mode-card-icon.exam {
-  color: #8b4513;
-}
-
-.mode-card-icon.quick {
-  color: #2d6a4f;
 }
 
 .mode-card-title {
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.0625rem;
+  font-size: 1.2rem;
   font-weight: 700;
-  color: #1a1a1a;
-  margin: 0 0 0.5rem 0;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
   line-height: 1.3;
 }
 
+.mode-card-subtitle {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
 .mode-card-desc {
-  font-size: 0.8125rem;
-  color: #4a5568;
-  line-height: 1.45;
-  margin: 0 0 1.25rem 0;
+  font-size: 0.8rem;
+  color: #cbd5e0;
+  line-height: 1.4;
+  margin: 0 0 1.5rem 0;
   flex: 1;
 }
 
 .mode-card-btn {
   width: 100%;
-  max-width: 160px;
-  background: #f7fafc;
-  border: 1px solid #c9d6e3;
+  background: transparent;
+  border: 1px solid;
+  border-radius: 5px;
+  /* Slightly less rounded than pill to match image more? Or keep pill. Image buttons look rounded. */
   border-radius: 50px;
-  padding: 0.5rem 1rem;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: #1a365d;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: auto;
+  /* Push to bottom */
 }
 
-.mode-card-btn:hover {
-  background: #edf2f7;
-  border-color: #2c5282;
+/* Progress Bar in Level 2 */
+.progress-container {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
-.mode-card-popular .card-header.exam {
-  height: 2.5rem;
+.progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: #2d3748;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
 }
 
-.mode-card-popular .mode-badge {
-  top: 1.25rem;
+.progress-bar-fill {
+  height: 100%;
+  background: #3b82f6;
+  border-radius: 3px;
 }
 
-/* Disclaimer */
-.disclaimer {
-  margin-top: 2.5rem;
-  padding: 1.25rem 1.5rem;
-  background-color: #f7fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.8125rem;
-  line-height: 1.55;
-  color: #4a5568;
+.progress-text {
+  font-size: 0.75rem;
+  color: #90cdf4;
+  text-align: center;
+  margin: 0;
 }
 
-.disclaimer p {
-  margin: 0 0 0.75rem 0;
+/* Responsive */
+@media (max-width: 900px) {
+  .mode-cards {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .mode-card.final-boss {
+    margin-top: 0;
+  }
 }
 
-.disclaimer p:last-child {
-  margin-bottom: 0;
-}
-
-.disclaimer a {
-  color: #2c5282;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.disclaimer a:hover {
-  text-decoration: underline;
-}
-
-/* About link */
+/* Disclaimer / About Link */
 .about-link-container {
   margin-top: 2rem;
   text-align: center;
 }
 
 .about-link-btn {
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 0.9375rem;
-  font-weight: 500;
   background: transparent;
-  border: 1px solid #2c5282;
+  border: 1px solid #4a5568;
   border-radius: 6px;
-  padding: 0.625rem 1.25rem;
-  color: #2c5282;
+  padding: 0.6rem 1.2rem;
+  color: #a0aec0;
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: all 0.2s;
 }
 
 .about-link-btn:hover {
-  background: #2c5282;
-  color: #ffffff;
+  border-color: #cbd5e0;
+  color: #fff;
 }

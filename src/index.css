@@ -16,6 +16,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #0f1115;
+  /* Global dark background */
+  color: #e2e8f0;
+  /* Global light text */
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
 
 #root {

@@ -1,15 +1,14 @@
 import './About.css'
+import { Link } from 'react-router-dom';
 
-function About({ onBackToStart }) {
+function About() {
   return (
     <div className="about-page">
       <div className="about-header">
         <h1 className="about-title">About the U.S. Citizenship and Civics Test</h1>
-        {onBackToStart && (
-          <button type="button" className="about-back-btn" onClick={onBackToStart}>
-            ← Back to Home
-          </button>
-        )}
+        <Link to="/" className="about-back-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
+          ← Back to Home
+        </Link>
       </div>
 
       <section className="seo-info" id="citizenship-test-info" aria-label="Citizenship test information">

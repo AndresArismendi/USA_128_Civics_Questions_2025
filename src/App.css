@@ -1,49 +1,36 @@
-/* U.S. Civics Questionnaire — formal, document-style layout */
-
-.app {
-  min-height: 100vh;
+/* Layout for the sidebar and main content */
+.app-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  box-sizing: border-box;
+  min-height: 100vh;
 }
 
+.main-content {
+  flex: 1;
+  margin-left: 100px;
+  /* Width of the sidebar */
+  padding: 2rem;
+  background-color: #0f1115;
+  /* Matching dark background */
+  min-height: 100vh;
+  transition: margin-left 0.3s ease;
+}
+
+/* Ensure existing components work well */
 .app-loading,
-.app-error,
-.app-empty {
-  max-width: 32rem;
-  margin: 0 auto;
-  padding: 2.5rem;
-  text-align: center;
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.0625rem;
-  color: #1a365d;
-  background: #fff;
-  border: 1px solid #c9d6e3;
-  box-shadow: 0 1px 3px rgba(26, 54, 93, 0.08);
-}
-
 .app-error {
-  border-left: 4px solid #b22234;
-  color: #2d3748;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  background-color: #0f1115;
 }
 
-.app-error p {
-  color: #742a2a;
-}
-
-.app-empty p {
-  color: #4a5568;
-}
-
-.app-loading p,
-.app-error p,
-.app-empty p {
-  margin: 0;
-}
-
-#root {
-  width: 100%;
-  margin: 0 auto;
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 70px;
+    /* Matching smaller sidebar width */
+    padding: 1rem;
+  }
 }

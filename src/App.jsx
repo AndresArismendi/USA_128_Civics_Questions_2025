@@ -1,33 +1,17 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect } from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
-import Test from './components/Test.jsx'
 import StartPage from './components/StartPage.jsx'
 import About from './components/About.jsx'
-
-const EXAM_QUESTION_COUNT = 20
-const EXAM_PASS_THRESHOLD = 12
-const EXAM_NO_OPTIONS_QUESTION_COUNT = 20
-const QUICK_QUESTION_COUNT = 10
-
-function shuffleArray(array) {
-  const copy = [...array]
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]]
-  }
-  return copy
-}
+import QuizPage from './components/QuizPage.jsx'
+import PrivacyPolicy from './components/PrivacyPolicy.jsx'
+import Sidebar from './components/Sidebar.jsx'
 
 function App() {
-  const [rawQuizDataEn, setRawQuizDataEn] = useState(null)
-  const [rawQuizDataEs, setRawQuizDataEs] = useState(null)
+  const [quizDataEn, setQuizDataEn] = useState(null)
+  const [quizDataEs, setQuizDataEs] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-
-  const [selectedMode, setSelectedMode] = useState(null)
-  const [selectedLanguage, setSelectedLanguage] = useState(null)
-  const [sessionKey, setSessionKey] = useState(0)
-  const [showAbout, setShowAbout] = useState(false)
 
   // Load both language files at once
   useEffect(() => {
@@ -37,8 +21,8 @@ function App() {
       fetch('/quiz-data-es.json').then(res => res.json())
     ])
       .then(([en, es]) => {
-        setRawQuizDataEn(en)
-        setRawQuizDataEs(es)
+        setQuizDataEn(en)
+        setQuizDataEs(es)
         setLoading(false)
       })
       .catch(() => {
@@ -46,34 +30,6 @@ function App() {
         setLoading(false)
       })
   }, [])
-
-  // Handler that now takes both mode and language
-  const handleSelectMode = (mode, lang) => {
-    setSelectedMode(mode)
-    setSelectedLanguage(lang)
-    setSessionKey(k => k + 1)
-  }
-
-  let rawQuizData = selectedLanguage === 'es' ? rawQuizDataEs : rawQuizDataEn
-
-  const quizDataForMode = useMemo(() => {
-    if (!rawQuizData || !selectedMode) return null
-    const all = rawQuizData.questions
-    const shuffled = shuffleArray(all)
-    let questions
-    if (selectedMode === 'study') {
-      questions = shuffled
-    } else if (selectedMode === 'exam') {
-      questions = shuffled.slice(0, Math.min(EXAM_QUESTION_COUNT, shuffled.length))
-    } else if (selectedMode === 'real_no_options') {
-      questions = shuffled.slice(0, Math.min(EXAM_NO_OPTIONS_QUESTION_COUNT, shuffled.length))
-    } else {
-      questions = shuffled.slice(0, Math.min(QUICK_QUESTION_COUNT, shuffled.length))
-    }
-    return { ...rawQuizData, questions }
-  }, [rawQuizData, selectedMode, sessionKey])
-
-  const passThreshold = selectedMode === 'exam' ? EXAM_PASS_THRESHOLD : undefined
 
   if (loading) {
     return (
@@ -91,45 +47,35 @@ function App() {
     )
   }
 
-  if (!rawQuizDataEn?.questions?.length && !rawQuizDataEs?.questions?.length) {
-    return (
-      <div className="app-empty">
-        <p>No questions available in this questionnaire.</p>
-      </div>
-    )
-  }
-
-  if (showAbout) {
-    return (
-      <div className="app">
-        <About onBackToStart={() => setShowAbout(false)} />
-      </div>
-    )
-  }
-
-  if (!selectedMode || !selectedLanguage) {
-    return (
-      <div className="app">
-        <StartPage
-          totalQuestions={(rawQuizDataEn && rawQuizDataEn.questions.length) || 0}
-          onSelectMode={handleSelectMode}
-          onShowAbout={() => setShowAbout(true)}
-        />
-      </div>
-    )
-  }
-
   return (
-    <div className="app">
-      <Test
-        key={sessionKey}
-        mode={selectedMode}
-        quizData={quizDataForMode}
-        passThreshold={passThreshold}
-        onBackToStart={() => { setSelectedMode(null); setSelectedLanguage(null) }}
-        onRestart={() => setSessionKey((k) => k + 1)}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="app-container">
+        <Sidebar />
+        <div className="main-content">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <StartPage
+                  totalQuestions={(quizDataEn && quizDataEn.questions.length) || 0}
+                />
+              }
+            />
+            <Route
+              path="/quiz"
+              element={
+                <QuizPage
+                  quizDataEn={quizDataEn}
+                  quizDataEs={quizDataEs}
+                />
+              }
+            />
+            <Route path="/about" element={<About />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   )
 }
 

@@ -186,7 +186,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
     : 'feedback'
 
   return (
-    <div className="quiz-container">
+    <div className={`quiz-container ${mode}`}>
       <div className="progress-bar" role="progressbar" aria-valuenow={currentQuestionIndex + 1} aria-valuemin={0} aria-valuemax={questions.length}>
         <div className="progress-bar-fill" style={{ width: `${progressPercent}%` }} />
       </div>

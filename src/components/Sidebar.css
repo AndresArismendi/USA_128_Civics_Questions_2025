@@ -1,0 +1,80 @@
+.sidebar {
+    width: 100px;
+    height: 100vh;
+    background-color: #1a1d26;
+    /* Dark background similar to image */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    align-items: center;
+}
+
+.sidebar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8b9bb4;
+    /* Muted text color */
+    transition: all 0.3s ease;
+    width: 80%;
+    padding: 10px 0;
+    border-radius: 12px;
+    position: relative;
+}
+
+.sidebar-item:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-item.active {
+    color: #3b82f6;
+    /* Blue active color */
+    background: linear-gradient(180deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-left: 3px solid #3b82f6;
+}
+
+/* Add a glowing effect to the active item's icon */
+.sidebar-item.active .icon-container {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.icon-container {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Responsiveness: Hide text on very small screens or change layout */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+    }
+
+    .label {
+        display: none;
+    }
+}

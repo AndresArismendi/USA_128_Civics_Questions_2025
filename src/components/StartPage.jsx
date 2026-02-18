@@ -1,80 +1,85 @@
 import { useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
 import './StartPage.css';
 
 
 const MODES = {
+  quick: {
+    id: 'quick',
+    cardClass: 'level-1',
+    icon: '⚡', // Lightning bolt
+    title: 'Level 1:\nThe 2-Minute Drill',
+    subtitle: 'Algorithm: Foundation',
+    description: 'Short practice session with 10 randomized evaluation for fast retest. No pass/fail limit.',
+    buttonLabel: 'Start Practice →',
+  },
   study: {
     id: 'study',
-    headerClass: 'card-header study',
-    icon: '📖',
-    title: 'Study All Questions',
-    description: 'Full study mode covering the entire civics question bank. No time limit, no pass/fail—learn at your own pace.',
-    buttonLabel: 'Start →',
+    cardClass: 'level-2',
+    icon: '📖', // Open book
+    title: 'Level 2: The Gauntlet',
+    subtitle: 'Module: Full Deck Mastery',
+    description: '65% Mastered', // Placeholder for progress if available, else static text from image
+    buttonLabel: 'Begin Challenge →',
   },
   exam: {
     id: 'exam',
-    headerClass: 'card-header exam',
-    icon: '🏛️',
-    title: 'Real Test Exam Mode (20 Questions)',
-    description: 'Simulated official-style test with 20 randomized questions. You must answer at least 12 correctly to pass.',
-    buttonLabel: 'Begin Exam →',
-    badge: 'Most Popular',
+    cardClass: 'final-boss',
+    icon: '👑', // Crown
+    title: 'The Final Boss',
+    subtitle: 'Assessment: Official Simulation',
+    description: '20 Qs',
+    buttonLabel: 'Take Exam →',
   },
   real_no_options: {
     id: 'real_no_options',
-    headerClass: 'card-header exam',
-    icon: '🗣️',
-    title: 'Real Test Exam Mode without options (20 Questions)',
-    description: 'Simulated official-style test with 20 randomized questions. Display only the question text (hidden until the user click a button to reveal the answer).',
-    buttonLabel: 'Begin Exam →',
-    badge: 'Advanced',
-  },
-  quick: {
-    id: 'quick',
-    headerClass: 'card-header quick',
-    icon: '⚡',
-    title: 'Quick Practice (10 Questions)',
-    description: 'Short practice session with 10 randomized questions for fast review. No pass/fail limit.',
-    buttonLabel: 'Go →',
+    cardClass: 'bonus-round',
+    icon: '💀', // Skull
+    title: 'Bonus Round:\nGhost Mode',
+    subtitle: 'Hardcore: No Assistance',
+    description: '',
+    buttonLabel: 'Attempt Hard →',
+    badge: 'HARD',
   },
 }
 
-function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
+function StartPage({ totalQuestions }) {
   const [pendingMode, setPendingMode] = useState(null);
+  const navigate = useNavigate();
 
-  const studyTitle =
-    totalQuestions != null
-      ? `Study All ${totalQuestions} Questions`
-      : "Study All Questions";
+  // "Level 2" data: showing "Study All Questions" logic if needed, or just static text. 
+  // The image shows "65% Mastered" pointing to a progress bar. 
+  // For now I'll use static text or calculate if possible. 
+  // StartPage props: { totalQuestions }. It doesn't seem to have progress data.
+  // I will use a static placeholder or simple text for now.
+
+  const handleModeSelect = (mode, lang) => {
+    navigate('/quiz', { state: { mode, language: lang } });
+    setPendingMode(null);
+  };
 
   // --- Language selection overlay ---
   if (pendingMode) {
     return (
       <div className="start-page">
-        <h2 style={{ textAlign: "center", margin: "2rem 0" }}>
+        <h2 style={{ textAlign: "center", margin: "2rem 0", color: "#fff" }}>
           Choose Language / Elige idioma
         </h2>
         <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
           <button
             className="mode-card-btn"
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            onClick={() => {
-              onSelectMode(pendingMode, "en");
-              setPendingMode(null);
-            }}
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff" }}
+            onClick={() => handleModeSelect(pendingMode, 'en')}
           >
-            <img src="/usa-flag.png" alt="USA Flag" style={{ width: "30px", height: "auto" }} />
+            <img src="/usa-flag.png" alt="USA Flag" style={{ width: "30px", height: "auto", color: "#fff" }} />
             English
           </button>
           <button
             className="mode-card-btn"
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
-            onClick={() => {
-              onSelectMode(pendingMode, "es");
-              setPendingMode(null);
-            }}
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff" }}
+            onClick={() => handleModeSelect(pendingMode, 'es')}
           >
-            <img src="/spain-flag.png" alt="Spain Flag" style={{ width: "30px", height: "auto" }} />
+            <img src="/spain-flag.png" alt="Spain Flag" style={{ width: "30px", height: "auto", color: "#fff" }} />
             Español
           </button>
         </div>
@@ -90,81 +95,77 @@ function StartPage({ totalQuestions, onSelectMode, onShowAbout }) {
     );
   }
 
-  // --- Mode cards as before, but buttons just set pendingMode ---
+  // --- Mode cards render ---
   return (
     <div className="start-page">
       <h1 className="start-page-title">Choose Your Study Mode</h1>
+
+      {/* Skill Progression section - per image, if feasible later, skipping for now to focus on cards */}
+      <div className="skill-progression-placeholder"></div>
+
       <div className="mode-cards">
-        <div className="mode-card">
-          <div className={MODES.study.headerClass} />
+        {/* Level 1: Quick */}
+        <div className={`mode-card ${MODES.quick.cardClass}`}>
           <div className="mode-card-body">
-            <div className="mode-card-icon" aria-hidden="true">{MODES.study.icon}</div>
-            <h2 className="mode-card-title">{studyTitle}</h2>
-            <p className="mode-card-desc">{MODES.study.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('study')}>
-              {MODES.study.buttonLabel}
-            </button>
-          </div>
-        </div>
-        <div className="mode-card mode-card-popular">
-          <div className={MODES.exam.headerClass}>
-            <span className="mode-badge">{MODES.exam.badge}</span>
-          </div>
-          <div className="mode-card-body">
-            <div className="mode-card-icon exam" aria-hidden="true">{MODES.exam.icon}</div>
-            <h2 className="mode-card-title">{MODES.exam.title}</h2>
-            <p className="mode-card-desc">{MODES.exam.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('exam')}>
-              {MODES.exam.buttonLabel}
-            </button>
-          </div>
-        </div>
-        <div className="mode-card">
-          <div className={MODES.real_no_options.headerClass}>
-            <span className="mode-badge" style={{ backgroundColor: '#2d3748' }}>{MODES.real_no_options.badge}</span>
-          </div>
-          <div className="mode-card-body">
-            <div className="mode-card-icon exam" aria-hidden="true">{MODES.real_no_options.icon}</div>
-            <h2 className="mode-card-title">{MODES.real_no_options.title}</h2>
-            <p className="mode-card-desc">{MODES.real_no_options.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('real_no_options')}>
-              {MODES.real_no_options.buttonLabel}
-            </button>
-          </div>
-        </div>
-        <div className="mode-card">
-          <div className={MODES.quick.headerClass} />
-          <div className="mode-card-body">
-            <div className="mode-card-icon quick" aria-hidden="true">{MODES.quick.icon}</div>
+            <div className="mode-card-icon" aria-hidden="true">{MODES.quick.icon}</div>
             <h2 className="mode-card-title">{MODES.quick.title}</h2>
+            <p className="mode-card-subtitle">{MODES.quick.subtitle}</p>
             <p className="mode-card-desc">{MODES.quick.description}</p>
             <button type="button" className="mode-card-btn" onClick={() => setPendingMode('quick')}>
               {MODES.quick.buttonLabel}
             </button>
           </div>
         </div>
-      </div>
 
-      <div className="disclaimer" role="contentinfo">
-        <p>
-          This website is a study tool for the USCIS 2025 Civics Test and is not an official USCIS site. All questions and answers are based on the publicly available USCIS materials.
-        </p>
-        <p>
-          We make every effort to provide accurate and up-to-date information, but we cannot guarantee correctness and the official USCIS test may be updated.
-        </p>
-        <p>
-          This site is for educational purposes only. We do not provide immigration advice. For official information about the U.S. citizenship test, please visit{' '}
-          <a href="https://www.uscis.gov/citizenship" target="_blank" rel="noopener noreferrer">uscis.gov/citizenship</a>.
-        </p>
-      </div>
-
-      {onShowAbout && (
-        <div className="about-link-container">
-          <button type="button" className="about-link-btn" onClick={onShowAbout}>
-            Learn More About the Citizenship Test →
-          </button>
+        {/* Level 2: Study */}
+        <div className={`mode-card ${MODES.study.cardClass}`}>
+          <div className="mode-card-body">
+            <div className="mode-card-icon" aria-hidden="true">{MODES.study.icon}</div>
+            <h2 className="mode-card-title">{MODES.study.title}</h2>
+            <p className="mode-card-subtitle">{MODES.study.subtitle}</p>
+            {/* Progress bar placeholder */}
+            <div className="progress-container">
+              <div className="progress-bar-bg"><div className="progress-bar-fill" style={{ width: '65%' }}></div></div>
+              <p className="progress-text">{MODES.study.description}</p>
+            </div>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('study')}>
+              {MODES.study.buttonLabel}
+            </button>
+          </div>
         </div>
-      )}
+
+        {/* Final Boss: Exam */}
+        <div className={`mode-card ${MODES.exam.cardClass}`}>
+          <div className="castle-header-decoration"></div> {/* Specific decoration if needed in CSS */}
+          <div className="mode-card-body">
+            <div className="hearts-container">❤️❤️❤️</div>
+            <div className="mode-card-icon" aria-hidden="true">{MODES.exam.icon}</div>
+            <h2 className="mode-card-title">{MODES.exam.title}</h2>
+            <p className="mode-card-subtitle">{MODES.exam.subtitle}</p>
+            <p className="mode-card-desc">{MODES.exam.description}</p>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('exam')}>
+              {MODES.exam.buttonLabel}
+            </button>
+          </div>
+        </div>
+
+        {/* Bonus Round */}
+        <div className={`mode-card ${MODES.real_no_options.cardClass}`}>
+          <div className="mode-badge-container">
+            <span className="mode-badge">{MODES.real_no_options.badge}</span>
+          </div>
+          <div className="mode-card-body">
+            <div className="mode-card-icon" aria-hidden="true">{MODES.real_no_options.icon}</div>
+            <h2 className="mode-card-title">{MODES.real_no_options.title}</h2>
+            <p className="mode-card-subtitle">{MODES.real_no_options.subtitle}</p>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('real_no_options')}>
+              {MODES.real_no_options.buttonLabel}
+            </button>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   );
 }
