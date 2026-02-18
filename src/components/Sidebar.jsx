@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
+import ThemeToggle from './ThemeToggle';
 
 const Sidebar = () => {
     return (
@@ -48,6 +49,7 @@ const Sidebar = () => {
                     <span className="label">Privacy</span>
                 </NavLink>
             </div>
+            <ThemeToggle />
         </nav>
     );
 };

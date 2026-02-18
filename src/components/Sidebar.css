@@ -1,13 +1,13 @@
 .sidebar {
     width: 100px;
     height: 100vh;
-    background-color: #1a1d26;
+    background-color: var(--sidebar-bg);
     /* Dark background similar to image */
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid var(--sidebar-border);
     position: fixed;
     left: 0;
     top: 0;
@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #8b9bb4;
+    color: var(--text-muted);
     /* Muted text color */
     transition: all 0.3s ease;
     width: 80%;
@@ -39,15 +39,15 @@
 }
 
 .sidebar-item:hover {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    background-color: var(--sidebar-item-hover);
 }
 
 .sidebar-item.active {
-    color: #3b82f6;
+    color: var(--accent-color);
     /* Blue active color */
     background: linear-gradient(180deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
-    border-left: 3px solid #3b82f6;
+    border-left: 3px solid var(--accent-color);
 }
 
 /* Add a glowing effect to the active item's icon */
@@ -77,4 +77,26 @@
     .label {
         display: none;
     }
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 10px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    /* Push to bottom */
+    margin-bottom: 2rem;
+}
+
+.theme-toggle:hover {
+    color: var(--text-primary);
+    background-color: var(--sidebar-item-hover);
+    transform: rotate(15deg);
 }

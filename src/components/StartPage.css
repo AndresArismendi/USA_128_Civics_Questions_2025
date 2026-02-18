@@ -5,14 +5,14 @@
   max-width: 70rem;
   margin: 0 auto;
   padding: 2rem 1rem;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .start-page-title {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   text-align: center;
   margin: 0 0 3rem 0;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -26,7 +26,7 @@
 }
 
 .mode-card {
-  background: #111822;
+  background: var(--bg-secondary);
   /* Very dark background */
   border: 2px solid transparent;
   border-radius: 12px;
@@ -50,7 +50,7 @@
   align-items: center;
   text-align: center;
   flex: 1;
-  background: #111827;
+  background: var(--bg-tertiary);
   border-radius: 10px;
   height: 100%;
 }
@@ -105,14 +105,14 @@
 }
 
 .mode-card.level-2 .mode-card-btn {
-  background: #3b82f6;
-  border-color: #3b82f6;
+  background: var(--accent-color);
+  border-color: var(--accent-color);
   color: #ffffff;
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
 .mode-card.level-2 .mode-card-btn:hover {
-  background: #2563eb;
+  background: var(--accent-hover);
   box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
 }
 
@@ -158,7 +158,7 @@
 /* --- Bonus Round: Ghost Mode (Grey/Dark) --- */
 .mode-card.bonus-round {
   border-color: #4a5568;
-  background: #1a202c;
+  background: var(--bg-tertiary);
   opacity: 0.8;
 }
 
@@ -214,21 +214,21 @@
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-primary);
   margin: 0 0 0.25rem 0;
   line-height: 1.3;
 }
 
 .mode-card-subtitle {
   font-size: 0.85rem;
-  color: #a0aec0;
+  color: var(--text-secondary);
   margin: 0 0 1rem 0;
   font-weight: 600;
 }
 
 .mode-card-desc {
   font-size: 0.8rem;
-  color: #cbd5e0;
+  color: var(--text-muted);
   line-height: 1.4;
   margin: 0 0 1.5rem 0;
   flex: 1;
@@ -262,7 +262,7 @@
 .progress-bar-bg {
   width: 100%;
   height: 6px;
-  background: #2d3748;
+  background: var(--bg-tertiary);
   border-radius: 3px;
   overflow: hidden;
   margin-bottom: 0.5rem;
@@ -276,7 +276,7 @@
 
 .progress-text {
   font-size: 0.75rem;
-  color: #90cdf4;
+  color: var(--text-accent);
   text-align: center;
   margin: 0;
 }
@@ -305,12 +305,12 @@
   border: 1px solid #4a5568;
   border-radius: 6px;
   padding: 0.6rem 1.2rem;
-  color: #a0aec0;
+  color: var(--text-muted);
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .about-link-btn:hover {
   border-color: #cbd5e0;
-  color: #fff;
+  color: var(--text-primary);
 }

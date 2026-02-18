@@ -10,17 +10,78 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Theme Variables - Default (Dark) */
+  --bg-primary: #0f1115;
+  --bg-secondary: #1a1d26;
+  --bg-tertiary: #2d3748;
+  --text-primary: #e2e8f0;
+  --text-secondary: #a0aec0;
+  --text-muted: #8b9bb4;
+  --border-color: #2d3748;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+
+  /* Sidebar specific */
+  --sidebar-bg: #1a1d26;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-item-hover: rgba(255, 255, 255, 0.05);
+
+  /* Quiz specifics */
+  --quiz-bg: #1a1d26;
+  --element-hover: #4a5568;
+  --text-accent: #90cdf4;
+
+  /* Feedback Colors */
+  --success-color: #48bb78;
+  --error-color: #f56565;
+  --success-bg: rgba(39, 103, 73, 0.3);
+  --error-bg: rgba(197, 48, 48, 0.3);
+}
+
+/* Light Theme Overrides */
+body.light-theme {
+  --bg-primary: #f7fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #edf2f7;
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  --border-color: #e2e8f0;
+  --accent-color: #3182ce;
+  --accent-hover: #2c5282;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  --sidebar-bg: #ffffff;
+  --sidebar-border: rgba(0, 0, 0, 0.1);
+  --sidebar-item-hover: rgba(0, 0, 0, 0.05);
+
+  --quiz-bg: #ffffff;
+  --element-hover: #e2e8f0;
+  --text-accent: #2b6cb0;
+
+  /* Feedback Colors */
+  --success-color: #2f855a;
+  /* Darker green for light mode text */
+  --error-color: #c53030;
+  /* Darker red for light mode text */
+  --success-bg: #c6f6d5;
+  /* Light green bg */
+  --error-bg: #fed7d7;
+  /* Light red bg */
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #0f1115;
+  background-color: var(--bg-primary);
   /* Global dark background */
-  color: #e2e8f0;
+  color: var(--text-primary);
   /* Global light text */
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #root {
