@@ -107,7 +107,7 @@ function StartPage({ totalQuestions }) {
   // --- Mode cards render ---
   return (
     <div className="start-page">
-      <h1 className="start-page-title">Choose Your Study Mode</h1>
+      <h1 className="start-page-title">Your Path to Citizenship Starts Here</h1>
 
       {/* Skill Progression section - per image, if feasible later, skipping for now to focus on cards */}
       <div className="skill-progression-placeholder"></div>
