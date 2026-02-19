@@ -1,4 +1,5 @@
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
+import speechService from '../services/SpeechService'
 import './Test.css'
 
 function shuffleOptions(array) {
@@ -20,6 +21,8 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
   const [showAdBreak, setShowAdBreak] = useState(false)
   const [adCountdown, setAdCountdown] = useState(0)
   const [pendingAction, setPendingAction] = useState(null)
+  const [isAudioEnabled, setIsAudioEnabled] = useState(mode === 'audio')
+  const audioTimeoutRef = useRef(null)
 
   const currentQuestion = questions[currentQuestionIndex]
   const optionsInRandomOrder = useMemo(
@@ -80,6 +83,76 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
     }, 100)
     return () => clearTimeout(t)
   }, [showAdBreak])
+
+  // Audio Mode Logic
+  useEffect(() => {
+    // Clear any pending audio timeout when question changes or audio is toggled
+    if (audioTimeoutRef.current) {
+      clearTimeout(audioTimeoutRef.current)
+    }
+    speechService.stop()
+
+    if (isAudioEnabled && !showResults && !showAdBreak) {
+      let isCancelled = false
+
+      const check = () => {
+        if (isCancelled) throw new Error('cancelled')
+      }
+
+      const speak = (text) => new Promise((resolve) => {
+        check()
+        speechService.speak(text, resolve)
+      })
+
+      const wait = (ms) => new Promise((resolve) => {
+        check()
+        audioTimeoutRef.current = setTimeout(resolve, ms)
+      })
+
+      const playSequence = async () => {
+        try {
+          // Play sequence twice
+          for (let i = 0; i < 2; i++) {
+            // Speak Question
+            await speak(currentQuestion.question)
+            check()
+
+            // Wait 2 seconds (or maybe slightly less between Q and A? sticking to 2s per prompt implication "After read the answer wait 2 seconds..."). 
+            // Logic: Question -> 2s -> Answer.
+            await wait(2000)
+            check()
+
+            // Speak Answer
+            await speak(`The answer is: ${currentQuestion.correctAnswer}`)
+            check()
+
+            // If this was the first iteration, wait a bit before repeating
+            if (i === 0) {
+              await wait(1000)
+            }
+          }
+
+          // After full sequence (twice), wait 2 seconds before next
+          await wait(2000)
+          check()
+
+          handleNext()
+        } catch (e) {
+          // Cancelled, ignore
+        }
+      }
+
+      playSequence()
+
+      return () => {
+        isCancelled = true
+        if (audioTimeoutRef.current) {
+          clearTimeout(audioTimeoutRef.current)
+        }
+        speechService.stop()
+      }
+    }
+  }, [currentQuestionIndex, isAudioEnabled, showResults, showAdBreak, currentQuestion])
 
   const handleAdNext = () => {
     const action = pendingAction
@@ -189,6 +262,16 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
     <div className={`quiz-container ${mode}`}>
       <div className="progress-bar" role="progressbar" aria-valuenow={currentQuestionIndex + 1} aria-valuemin={0} aria-valuemax={questions.length}>
         <div className="progress-bar-fill" style={{ width: `${progressPercent}%` }} />
+      </div>
+
+      <div className="audio-toggle-container">
+        <button
+          type="button"
+          className={`audio-toggle-btn ${isAudioEnabled ? 'active' : ''}`}
+          onClick={() => setIsAudioEnabled(!isAudioEnabled)}
+        >
+          {isAudioEnabled ? '🔊 Audio Mode: ON' : '🔈 Audio Mode: OFF'}
+        </button>
       </div>
       <h1>{title}</h1>
       {subtitle && <p className="quiz-subtitle">{subtitle}</p>}

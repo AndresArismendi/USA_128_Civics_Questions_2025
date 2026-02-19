@@ -337,3 +337,45 @@ body {
 .quiz-container.real_no_options .next-btn:hover {
   background-color: #2d3748;
 }
+
+/* Audio Mode (Blue - same as Study) */
+.quiz-container.audio {
+  border-left-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
+}
+
+.quiz-container.audio .progress-bar-fill {
+  background-color: #3b82f6;
+}
+
+/* Audio Toggle Button */
+.audio-toggle-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.audio-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.audio-toggle-btn.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: white;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
+
+.audio-toggle-btn:hover {
+  transform: translateY(-1px);
+}

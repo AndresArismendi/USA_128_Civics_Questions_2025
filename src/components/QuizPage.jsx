@@ -34,7 +34,7 @@ function QuizPage({ quizDataEn, quizDataEs }) {
         const all = rawQuizData.questions
         const shuffled = shuffleArray(all)
         let questions
-        if (mode === 'study') {
+        if (mode === 'study' || mode === 'audio') {
             questions = shuffled
         } else if (mode === 'exam') {
             questions = shuffled.slice(0, Math.min(EXAM_QUESTION_COUNT, shuffled.length))

@@ -41,6 +41,15 @@ const MODES = {
     buttonLabel: 'Attempt Hard →',
     badge: 'HARD',
   },
+  audio: {
+    id: 'audio',
+    cardClass: 'level-2',
+    icon: '🎧', // Headphones
+    title: 'Audio Mode',
+    subtitle: 'Listen and Learn',
+    description: 'Full Deck Audio Experience',
+    buttonLabel: 'Start Listening →',
+  },
 }
 
 function StartPage({ totalQuestions }) {
@@ -160,6 +169,19 @@ function StartPage({ totalQuestions }) {
             <p className="mode-card-subtitle">{MODES.real_no_options.subtitle}</p>
             <button type="button" className="mode-card-btn" onClick={() => setPendingMode('real_no_options')}>
               {MODES.real_no_options.buttonLabel}
+            </button>
+          </div>
+        </div>
+
+        {/* Audio Mode */}
+        <div className={`mode-card ${MODES.audio.cardClass}`}>
+          <div className="mode-card-body">
+            <div className="mode-card-icon" aria-hidden="true">{MODES.audio.icon}</div>
+            <h2 className="mode-card-title">{MODES.audio.title}</h2>
+            <p className="mode-card-subtitle">{MODES.audio.subtitle}</p>
+            <p className="mode-card-desc">{MODES.audio.description}</p>
+            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('audio')}>
+              {MODES.audio.buttonLabel}
             </button>
           </div>
         </div>
