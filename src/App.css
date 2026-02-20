@@ -9,8 +9,7 @@
   margin-left: 100px;
   /* Width of the sidebar */
   padding: 2rem;
-  background-color: var(--bg-primary);
-  /* Matching dark background */
+  /* background-color: var(--bg-primary); REMOVED to show body background */
   min-height: 100vh;
   transition: margin-left 0.3s ease;
 }

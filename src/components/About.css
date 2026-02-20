@@ -5,8 +5,7 @@
   max-width: 56rem;
   margin: 0 auto;
   padding: 2rem 1rem;
-  color: #e2e8f0;
-  /* Default text color light */
+  color: var(--text-primary);
 }
 
 .about-header {
@@ -22,10 +21,9 @@
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #ffffff;
-  /* White title */
+  color: var(--text-primary);
   margin: 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px var(--shadow-color);
 }
 
 .about-back-btn {
@@ -33,10 +31,10 @@
   font-size: 0.9375rem;
   font-weight: 500;
   background: transparent;
-  border: 1px solid #4a5568;
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 0.5rem 1rem;
-  color: #a0aec0;
+  color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.15s ease;
   text-decoration: none;
@@ -44,8 +42,9 @@
 }
 
 .about-back-btn:hover {
-  border-color: #cbd5e0;
-  color: #ffffff;
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+  background-color: var(--sidebar-item-hover);
 }
 
 /* SEO informative section */
@@ -89,20 +88,19 @@
 .contact-info {
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #2d3748;
-  /* Dark border */
+  border-top: 1px solid var(--border-color);
 }
 
 .contact-info h3 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .contact-info p {
   font-size: 0.9375rem;
-  color: #a0aec0;
+  color: var(--text-secondary);
 }
 
 .contact-info a {

@@ -6,6 +6,8 @@ import About from './components/About.jsx'
 import QuizPage from './components/QuizPage.jsx'
 import PrivacyPolicy from './components/PrivacyPolicy.jsx'
 import Sidebar from './components/Sidebar.jsx'
+import { ThemeProvider } from './context/ThemeContext'
+import ThemeToggle from './components/ThemeToggle.jsx'
 
 function App() {
   const [quizDataEn, setQuizDataEn] = useState(null)
@@ -48,34 +50,37 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <div className="app-container">
-        <Sidebar />
-        <div className="main-content">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <StartPage
-                  totalQuestions={(quizDataEn && quizDataEn.questions.length) || 0}
-                />
-              }
-            />
-            <Route
-              path="/quiz"
-              element={
-                <QuizPage
-                  quizDataEn={quizDataEn}
-                  quizDataEs={quizDataEs}
-                />
-              }
-            />
-            <Route path="/about" element={<About />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-          </Routes>
+    <ThemeProvider>
+      <BrowserRouter>
+        <div className="app-container">
+          <ThemeToggle />
+          <Sidebar />
+          <div className="main-content">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <StartPage
+                    totalQuestions={(quizDataEn && quizDataEn.questions.length) || 0}
+                  />
+                }
+              />
+              <Route
+                path="/quiz"
+                element={
+                  <QuizPage
+                    quizDataEn={quizDataEn}
+                    quizDataEs={quizDataEs}
+                  />
+                }
+              />
+              <Route path="/about" element={<About />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

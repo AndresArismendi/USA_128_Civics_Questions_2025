@@ -1,32 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useTheme } from '../context/ThemeContext';
+import './ThemeToggle.css';
 
 const ThemeToggle = () => {
-    const [theme, setTheme] = useState(() => {
-        // Check localStorage first
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) return savedTheme;
-
-        // Default to dark
-        return 'dark';
-    });
-
-    useEffect(() => {
-        const root = document.body;
-        if (theme === 'light') {
-            root.classList.add('light-theme');
-        } else {
-            root.classList.remove('light-theme');
-        }
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-        setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-    };
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <button
-            className="theme-toggle"
+            className={`theme-toggle ${theme}`}
             onClick={toggleTheme}
             aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
             title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}

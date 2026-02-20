@@ -15,8 +15,11 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
   const { title = 'Civics Questionnaire', subtitle, questions } = quizData
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [score, setScore] = useState(0)
+  const [incorrectScore, setIncorrectScore] = useState(0)
+  const [answersHistory, setAnswersHistory] = useState(new Array(questions.length).fill(null))
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [showAnswer, setShowAnswer] = useState(false) // New state for Real Mode
+  const [manualResult, setManualResult] = useState(null) // For Real Mode tracking
   const [showResults, setShowResults] = useState(false)
   const [showAdBreak, setShowAdBreak] = useState(false)
   const [adCountdown, setAdCountdown] = useState(0)
@@ -39,7 +42,32 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
   const handleOptionClick = (optionText) => {
     if (selectedAnswer !== null) return
     setSelectedAnswer(optionText)
-    if (optionText === currentQuestion.correctAnswer) setScore((s) => s + 1)
+    const isCorrect = optionText === currentQuestion.correctAnswer
+    if (isCorrect) {
+      setScore((s) => s + 1)
+    } else {
+      setIncorrectScore((s) => s + 1)
+    }
+    setAnswersHistory(prev => {
+      const newHistory = [...prev]
+      newHistory[currentQuestionIndex] = isCorrect ? 'correct' : 'incorrect'
+      return newHistory
+    })
+  }
+
+  const handleManualResult = (isCorrect) => {
+    if (manualResult !== null) return
+    setManualResult(isCorrect)
+    if (isCorrect) {
+      setScore((s) => s + 1)
+    } else {
+      setIncorrectScore((s) => s + 1)
+    }
+    setAnswersHistory(prev => {
+      const newHistory = [...prev]
+      newHistory[currentQuestionIndex] = isCorrect ? 'correct' : 'incorrect'
+      return newHistory
+    })
   }
 
   const shouldShowAd = questionNumber % 10 === 0 || isLastQuestion
@@ -55,6 +83,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
       } else {
         setCurrentQuestionIndex((i) => i + 1)
         setSelectedAnswer(null)
+        setManualResult(null)
       }
     }
   }
@@ -163,6 +192,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
     } else {
       setCurrentQuestionIndex((i) => i + 1)
       setSelectedAnswer(null)
+      setManualResult(null)
     }
   }
 
@@ -170,8 +200,11 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
     onRestart?.()
     setCurrentQuestionIndex(0)
     setScore(0)
+    setIncorrectScore(0)
+    setAnswersHistory(new Array(questions.length).fill(null))
     setSelectedAnswer(null)
     setShowAnswer(false)
+    setManualResult(null)
     setShowResults(false)
   }
 
@@ -264,14 +297,30 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
         <div className="progress-bar-fill" style={{ width: `${progressPercent}%` }} />
       </div>
 
-      <div className="audio-toggle-container">
-        <button
-          type="button"
-          className={`audio-toggle-btn ${isAudioEnabled ? 'active' : ''}`}
-          onClick={() => setIsAudioEnabled(!isAudioEnabled)}
-        >
-          {isAudioEnabled ? '🔊 Audio Mode: ON' : '🔈 Audio Mode: OFF'}
-        </button>
+      <div className="quiz-header-toolbar">
+        <div className="score-counters">
+          <div className="score-item correct">
+            <span className="icon">✅</span>
+            <span className="label">Correct: {score}</span>
+          </div>
+          <div className="score-item incorrect">
+            <span className="icon">❌</span>
+            <span className="label">Incorrect: {incorrectScore}</span>
+          </div>
+        </div>
+        <div className="audio-toggle-container">
+          <span className="audio-label">
+            {isAudioEnabled ? '🔊' : '🔈'}
+          </span>
+          <label className="switch" title={isAudioEnabled ? 'Audio Mode: ON' : 'Audio Mode: OFF'}>
+            <input
+              type="checkbox"
+              checked={isAudioEnabled}
+              onChange={() => setIsAudioEnabled(!isAudioEnabled)}
+            />
+            <span className="slider round"></span>
+          </label>
+        </div>
       </div>
       <h1>{title}</h1>
       {subtitle && <p className="quiz-subtitle">{subtitle}</p>}
@@ -318,9 +367,29 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
             <br />
             {currentQuestion.explanation}
           </p>
-          <button type="button" className="next-btn" onClick={handleNext}>
-            {isLastQuestion ? 'See Results' : 'Next Question'}
-          </button>
+
+          {manualResult === null ? (
+            <div className="manual-actions">
+              <button
+                type="button"
+                className="manual-result-btn correct"
+                onClick={() => handleManualResult(true)}
+              >
+                I was Right ✅
+              </button>
+              <button
+                type="button"
+                className="manual-result-btn incorrect"
+                onClick={() => handleManualResult(false)}
+              >
+                I was Wrong ❌
+              </button>
+            </div>
+          ) : (
+            <button type="button" className="next-btn" onClick={handleNext}>
+              {isLastQuestion ? 'See Results' : 'Next Question'}
+            </button>
+          )}
         </>
       )}
 
@@ -335,6 +404,16 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
           </button>
         </>
       )}
+
+      <div className="progress-circles-container">
+        {answersHistory.map((status, index) => (
+          <div
+            key={index}
+            className={`progress-circle ${status || ''} ${index === currentQuestionIndex ? 'current' : ''}`}
+            title={`Question ${index + 1}`}
+          />
+        ))}
+      </div>
     </div>
   )
 }

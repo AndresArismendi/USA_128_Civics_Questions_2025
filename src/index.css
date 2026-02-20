@@ -14,6 +14,7 @@
   /* Theme Variables - Default (Dark) */
   --bg-primary: #0f1115;
   --bg-secondary: #1a1d26;
+  --bg-secondary-rgb: 26, 29, 38;
   --bg-tertiary: #2d3748;
   --text-primary: #e2e8f0;
   --text-secondary: #a0aec0;
@@ -21,7 +22,7 @@
   --border-color: #2d3748;
   --accent-color: #3b82f6;
   --accent-hover: #2563eb;
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.4);
 
   /* Sidebar specific */
   --sidebar-bg: #1a1d26;
@@ -44,6 +45,7 @@
 body.light-theme {
   --bg-primary: #f7fafc;
   --bg-secondary: #ffffff;
+  --bg-secondary-rgb: 255, 255, 255;
   --bg-tertiary: #edf2f7;
   --text-primary: #1a202c;
   --text-secondary: #4a5568;
@@ -58,30 +60,80 @@ body.light-theme {
   --sidebar-item-hover: rgba(0, 0, 0, 0.05);
 
   --quiz-bg: #ffffff;
-  --element-hover: #e2e8f0;
+  --element-hover: #edf2f7;
   --text-accent: #2b6cb0;
 
   /* Feedback Colors */
   --success-color: #2f855a;
-  /* Darker green for light mode text */
   --error-color: #c53030;
-  /* Darker red for light mode text */
   --success-bg: #c6f6d5;
-  /* Light green bg */
   --error-bg: #fed7d7;
-  /* Light red bg */
+
+  background-image: url('./assets/light-bg.png');
 }
 
+/* Default / Dark Theme Background */
 body {
   margin: 0;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--bg-primary);
-  /* Global dark background */
+  background-image: url('./assets/dark-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text-primary);
-  /* Global light text */
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, background-image 0.5s ease;
+}
+
+/* Quiz Focus Mode Overlay */
+body.quiz-mode-active::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1;
+  /* Behind Sidebar but above Background */
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/* Ensure content is above the blur overlay */
+body.quiz-mode-active .app-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Blur and Dim Sidebar when in Quiz */
+body.quiz-mode-active .sidebar {
+  opacity: 0.6;
+  filter: blur(2px) grayscale(0.5);
+  transition: all 0.5s ease;
+}
+
+body.quiz-mode-active .sidebar:hover {
+  opacity: 1;
+  filter: none;
+}
+
+body.dark-theme.quiz-mode-active::before {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+body.light-theme.quiz-mode-active::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme {
+  background-image: url('./assets/dark-bg.jpg');
 }
 
 #root {

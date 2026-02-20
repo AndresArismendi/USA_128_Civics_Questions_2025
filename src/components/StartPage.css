@@ -50,9 +50,12 @@
   align-items: center;
   text-align: center;
   flex: 1;
-  background: var(--bg-tertiary);
+  background: var(--bg-secondary);
+  /* Updated from tertiary for better contrast */
   border-radius: 10px;
   height: 100%;
+  backdrop-filter: blur(5px);
+  background-color: rgba(var(--bg-secondary-rgb, 26, 29, 38), 0.8);
 }
 
 /* --- Level 1: The 2-Minute Drill (Orange) --- */
@@ -130,9 +133,6 @@
   box-shadow: 0 0 30px rgba(245, 101, 101, 0.5);
 }
 
-.mode-card.final-boss .castle-header-decoration {
-  /* Only visible if we add height/content, otherwise invisible */
-}
 
 .mode-card.final-boss .hearts-container {
   margin-bottom: 0.5rem;

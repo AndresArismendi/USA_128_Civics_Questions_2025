@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useLocation, useNavigate, Navigate } from 'react-router-dom'
 import Test from './Test.jsx'
 
@@ -21,6 +21,14 @@ function QuizPage({ quizDataEn, quizDataEs }) {
     const navigate = useNavigate()
     const { mode, language } = location.state || {}
     const [sessionKey, setSessionKey] = useState(0)
+
+    // Toggle background blur/darkness during quiz
+    useEffect(() => {
+        document.body.classList.add('quiz-mode-active')
+        return () => {
+            document.body.classList.remove('quiz-mode-active')
+        }
+    }, [])
 
     // Redirect to home if no mode/language selected (e.g. direct access to /quiz)
     if (!mode || !language) {

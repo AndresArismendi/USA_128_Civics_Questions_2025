@@ -2,31 +2,31 @@
 
 body {
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-  background-color: var(--bg-primary);
-  /* Dark background matching app */
+  /* background-color: var(--bg-primary); REMOVED to prioritize index.css */
   color: var(--text-primary);
   margin: 0;
   min-height: 100vh;
 }
 
 .quiz-container {
-  background-color: var(--quiz-bg);
+  background-color: rgba(var(--bg-secondary-rgb, 26, 29, 38), 0.95);
+  backdrop-filter: blur(10px);
   /* Dark container */
   border: 1px solid var(--border-color);
   border-left: 4px solid var(--accent-color);
   /* Brighter blue for contrast */
-  box-shadow: 0 4px 6px var(--shadow-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
   width: 100%;
   max-width: 36rem;
   margin: 0 auto;
   padding: 2rem 2.25rem;
-  padding-top: 2rem;
   text-align: left;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
   color: var(--text-primary);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 12px;
 }
 
 /* Subtle eagle/flag background in top right — low opacity so it doesn't interfere with reading */
@@ -348,34 +348,203 @@ body {
   background-color: #3b82f6;
 }
 
-/* Audio Toggle Button */
-.audio-toggle-container {
+/* Audio Toggle & Score Counters Header */
+.quiz-header-toolbar {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  background-color: var(--bg-tertiary);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
 }
 
-.audio-toggle-btn {
-  background: transparent;
-  border: 1px solid var(--text-secondary);
-  color: var(--text-secondary);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
+.score-counters {
+  display: flex;
+  gap: 1rem;
+}
+
+.score-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
-.audio-toggle-btn.active {
-  background: var(--accent-color);
+.score-item.correct {
+  color: #48bb78;
+}
+
+.score-item.incorrect {
+  color: #f56565;
+}
+
+.score-item .icon {
+  font-size: 1rem;
+}
+
+.audio-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.audio-label {
+  font-size: 1.1rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-tertiary);
+  transition: .4s;
+  border: 1px solid var(--border-color);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text-muted);
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: var(--accent-color);
   border-color: var(--accent-color);
-  color: white;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
 }
 
-.audio-toggle-btn:hover {
-  transform: translateY(-1px);
+input:focus+.slider {
+  box-shadow: 0 0 1px var(--accent-color);
+}
+
+input:checked+.slider:before {
+  transform: translateX(20px);
+  background-color: white;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch:hover .slider {
+  border-color: var(--accent-color);
+}
+
+/* Manual Actions (Real Mode) */
+.manual-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.manual-result-btn {
+  font-family: inherit;
+  font-weight: 600;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex: 1;
+  max-width: 200px;
+}
+
+.manual-result-btn.correct {
+  background-color: #276749;
+  color: white;
+}
+
+.manual-result-btn.correct:hover {
+  background-color: #2f855a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 133, 90, 0.3);
+}
+
+.manual-result-btn.incorrect {
+  background-color: #9b2c2c;
+  color: white;
+}
+
+.manual-result-btn.incorrect:hover {
+  background-color: #c53030;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(197, 48, 48, 0.3);
+}
+
+/* Progress Circles */
+.progress-circles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  justify-content: center;
+}
+
+.progress-circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.progress-circle.correct {
+  background-color: #48bb78;
+  border-color: #2f855a;
+  box-shadow: 0 0 8px rgba(72, 187, 120, 0.4);
+}
+
+.progress-circle.incorrect {
+  background-color: #f56565;
+  border-color: #c53030;
+  box-shadow: 0 0 8px rgba(245, 101, 101, 0.4);
+}
+
+.progress-circle.current {
+  transform: scale(1.4);
+  border-color: var(--accent-color);
+  border-width: 2px;
+  background-color: var(--bg-primary);
+}
+
+.progress-circle:hover {
+  transform: scale(1.6);
+  z-index: 2;
 }
