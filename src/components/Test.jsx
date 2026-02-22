@@ -13,19 +13,47 @@ function shuffleOptions(array) {
 
 const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
   const { title = 'Civics Questionnaire', subtitle, questions } = quizData
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-  const [score, setScore] = useState(0)
-  const [incorrectScore, setIncorrectScore] = useState(0)
-  const [answersHistory, setAnswersHistory] = useState(new Array(questions.length).fill(null))
+  const persistenceKey = useMemo(() => `quiz_progress_${title.replace(/\s+/g, '_')}_${mode}`, [title, mode])
+
+  // Load initial state from localStorage
+  const savedState = useMemo(() => {
+    try {
+      const saved = localStorage.getItem(persistenceKey)
+      return saved ? JSON.parse(saved) : null
+    } catch (e) {
+      return null
+    }
+  }, [persistenceKey])
+
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(savedState?.currentQuestionIndex || 0)
+  const [score, setScore] = useState(savedState?.score || 0)
+  const [incorrectScore, setIncorrectScore] = useState(savedState?.incorrectScore || 0)
+  const [answersHistory, setAnswersHistory] = useState(savedState?.answersHistory || new Array(questions.length).fill(null))
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [showAnswer, setShowAnswer] = useState(false) // New state for Real Mode
   const [manualResult, setManualResult] = useState(null) // For Real Mode tracking
   const [showResults, setShowResults] = useState(false)
+  const [showExitConfirmation, setShowExitConfirmation] = useState(false)
   const [showAdBreak, setShowAdBreak] = useState(false)
   const [adCountdown, setAdCountdown] = useState(0)
   const [pendingAction, setPendingAction] = useState(null)
   const [isAudioEnabled, setIsAudioEnabled] = useState(mode === 'audio')
   const audioTimeoutRef = useRef(null)
+
+  // Save state to localStorage whenever it changes
+  useEffect(() => {
+    if (showResults) {
+      localStorage.removeItem(persistenceKey)
+    } else {
+      const stateToSave = {
+        currentQuestionIndex,
+        score,
+        incorrectScore,
+        answersHistory
+      }
+      localStorage.setItem(persistenceKey, JSON.stringify(stateToSave))
+    }
+  }, [currentQuestionIndex, score, incorrectScore, answersHistory, showResults, persistenceKey])
 
   const currentQuestion = questions[currentQuestionIndex]
   const optionsInRandomOrder = useMemo(
@@ -197,6 +225,7 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
   }
 
   const handleRestart = () => {
+    localStorage.removeItem(persistenceKey)
     onRestart?.()
     setCurrentQuestionIndex(0)
     setScore(0)
@@ -277,7 +306,10 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
             Start Over
           </button>
           {onBackToStart && (
-            <button type="button" className="next-btn next-btn-secondary" onClick={onBackToStart}>
+            <button type="button" className="next-btn next-btn-secondary" onClick={() => {
+              localStorage.removeItem(persistenceKey)
+              onBackToStart()
+            }}>
               Back to menu
             </button>
           )}
@@ -308,18 +340,28 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
             <span className="label">Incorrect: {incorrectScore}</span>
           </div>
         </div>
-        <div className="audio-toggle-container">
-          <span className="audio-label">
-            {isAudioEnabled ? '🔊' : '🔈'}
-          </span>
-          <label className="switch" title={isAudioEnabled ? 'Audio Mode: ON' : 'Audio Mode: OFF'}>
-            <input
-              type="checkbox"
-              checked={isAudioEnabled}
-              onChange={() => setIsAudioEnabled(!isAudioEnabled)}
-            />
-            <span className="slider round"></span>
-          </label>
+        <div className="header-actions">
+          <div className="audio-toggle-container">
+            <span className="audio-label">
+              {isAudioEnabled ? '🔊' : '🔈'}
+            </span>
+            <label className="switch" title={isAudioEnabled ? 'Audio Mode: ON' : 'Audio Mode: OFF'}>
+              <input
+                type="checkbox"
+                checked={isAudioEnabled}
+                onChange={() => setIsAudioEnabled(!isAudioEnabled)}
+              />
+              <span className="slider round"></span>
+            </label>
+          </div>
+          <button
+            type="button"
+            className="exit-test-btn"
+            onClick={() => setShowExitConfirmation(true)}
+            title="Exit Test"
+          >
+            ✕
+          </button>
         </div>
       </div>
       <h1>{title}</h1>
@@ -414,7 +456,37 @@ const Test = ({ quizData, passThreshold, onBackToStart, onRestart, mode }) => {
           />
         ))}
       </div>
-    </div>
+
+      {
+        showExitConfirmation && (
+          <div className="modal-overlay">
+            <div className="modal-content">
+              <h3>Exit Questionnaire?</h3>
+              <p>Are you sure you want to end the test? Your progress will be lost.</p>
+              <div className="modal-actions">
+                <button
+                  type="button"
+                  className="modal-btn secondary"
+                  onClick={() => setShowExitConfirmation(false)}
+                >
+                  No, Continue
+                </button>
+                <button
+                  type="button"
+                  className="modal-btn primary"
+                  onClick={() => {
+                    localStorage.removeItem(persistenceKey)
+                    onBackToStart()
+                  }}
+                >
+                  Yes, Exit
+                </button>
+              </div>
+            </div>
+          </div>
+        )
+      }
+    </div >
   )
 }
 
