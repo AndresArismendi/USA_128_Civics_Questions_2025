@@ -28,8 +28,9 @@
 /* Responsive adjustment */
 @media (max-width: 768px) {
   .main-content {
-    margin-left: 70px;
-    /* Matching smaller sidebar width */
+    margin-left: 0;
     padding: 1rem;
+    padding-bottom: 80px;
+    /* Space for the bottom navigation bar */
   }
 }

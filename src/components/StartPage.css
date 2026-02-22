@@ -1,316 +1,279 @@
-/* Choose Your Study Mode — main start page */
+/* Professional Portal Styling */
 
 .start-page {
   width: 100%;
-  max-width: 70rem;
+  max-width: 80rem;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 4rem 2rem;
   color: var(--text-primary);
 }
 
 .start-page-title {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 2.5rem;
+  font-family: var(--font-serif);
+  font-size: 3rem;
   font-weight: 700;
   color: var(--text-primary);
   text-align: center;
-  margin: 0 0 3rem 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0 0 4rem 0;
+  letter-spacing: -0.02em;
+}
+
+.portal-section {
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  padding: 0.1rem;
+  border: 1px solid var(--sidebar-border);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+  background-color: rgba(var(--bg-secondary-rgb), 0.6);
+
 }
 
 .mode-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
   align-items: stretch;
 }
 
 .mode-card {
-  background: var(--bg-secondary);
-  /* Very dark background */
-  border: 2px solid transparent;
+  background-color: rgba(var(--bg-secondary-rgb), 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  padding: 2px;
-  /* For inner border effect if needed */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  min-height: 420px;
+  /* Ensure shared height */
 }
 
 .mode-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  background-color: rgba(var(--bg-secondary-rgb), 0.8);
 }
 
 .mode-card-body {
-  padding: 1.5rem;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   flex: 1;
-  background: var(--bg-secondary);
-  /* Updated from tertiary for better contrast */
-  border-radius: 10px;
   height: 100%;
-  backdrop-filter: blur(5px);
-  background-color: rgba(var(--bg-secondary-rgb, 26, 29, 38), 0.8);
 }
 
-/* --- Level 1: The 2-Minute Drill (Orange) --- */
-.mode-card.level-1 {
-  border-color: #f6ad55;
-  box-shadow: 0 0 15px rgba(246, 173, 85, 0.2);
-}
-
-.mode-card.level-1:hover {
-  box-shadow: 0 0 25px rgba(246, 173, 85, 0.4);
-}
-
-.mode-card.level-1 .mode-card-icon {
-  color: #f6ad55;
-  background: rgba(246, 173, 85, 0.1);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mode-card.level-1 .mode-card-btn {
-  border-color: #f6ad55;
-  color: #f6ad55;
-}
-
-.mode-card.level-1 .mode-card-btn:hover {
-  background: #f6ad55;
-  color: #1a202c;
-}
-
-/* --- Level 2: The Gauntlet (Blue) --- */
-.mode-card.level-2 {
-  border-color: #3b82f6;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
-}
-
-.mode-card.level-2:hover {
-  box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
-}
-
-.mode-card.level-2 .mode-card-icon {
-  color: #3b82f6;
-  background: rgba(59, 130, 246, 0.1);
-  /* Optional bg for icon */
-  border-radius: 8px;
-  /* Different shape */
-}
-
-.mode-card.level-2 .mode-card-btn {
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  color: #ffffff;
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-}
-
-.mode-card.level-2 .mode-card-btn:hover {
-  background: var(--accent-hover);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
-}
-
-/* --- The Final Boss (Red) --- */
-.mode-card.final-boss {
-  border-color: #f56565;
-  box-shadow: 0 0 15px rgba(245, 101, 101, 0.3);
-  margin-top: -1rem;
-  /* Make it pop out */
-  position: relative;
-  z-index: 10;
-}
-
-.mode-card.final-boss:hover {
-  box-shadow: 0 0 30px rgba(245, 101, 101, 0.5);
-}
-
-
-.mode-card.final-boss .hearts-container {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.mode-card.final-boss .mode-card-icon {
-  color: #f56565;
-  text-shadow: 0 0 10px rgba(245, 101, 101, 0.8);
-}
-
-.mode-card.final-boss .mode-card-btn {
-  background: rgba(245, 101, 101, 0.1);
-  border-color: #f56565;
-  color: #f56565;
-}
-
-.mode-card.final-boss .mode-card-btn:hover {
-  background: #f56565;
-  color: #fff;
-}
-
-/* --- Bonus Round: Ghost Mode (Grey/Dark) --- */
-.mode-card.bonus-round {
-  border-color: #4a5568;
-  background: var(--bg-tertiary);
-  opacity: 0.8;
-}
-
-.mode-card.bonus-round:hover {
-  border-color: #718096;
-  opacity: 1;
-  box-shadow: 0 0 15px rgba(113, 128, 150, 0.2);
-}
-
-.mode-card.bonus-round .mode-badge-container {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-
-.mode-card.bonus-round .mode-badge {
-  background: #4a5568;
-  color: #fff;
-  font-size: 0.7rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-.mode-card.bonus-round .mode-card-icon {
-  color: #a0aec0;
-}
-
-.mode-card.bonus-round .mode-card-btn {
-  border-color: #718096;
-  color: #a0aec0;
-  background: transparent;
-}
-
-.mode-card.bonus-round .mode-card-btn:hover {
-  border-color: #cbd5e0;
-  color: #fff;
-}
-
-
-/* --- Shared Styles --- */
 .mode-card-icon {
-  width: 48px;
-  height: 48px;
-  font-size: 2rem;
+  width: 64px;
+  height: 64px;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(var(--bg-secondary-rgb), 0.5);
+  border-radius: 16px;
+  border: 1px solid var(--sidebar-border);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .mode-card-title {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.2rem;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 0.25rem 0;
-  line-height: 1.3;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
 }
 
 .mode-card-subtitle {
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin: 0 0 1rem 0;
-  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  margin: 0 0 1.5rem 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .mode-card-desc {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.4;
-  margin: 0 0 1.5rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
   flex: 1;
 }
 
 .mode-card-btn {
   width: 100%;
   background: transparent;
-  border: 1px solid;
-  border-radius: 5px;
-  /* Slightly less rounded than pill to match image more? Or keep pill. Image buttons look rounded. */
-  border-radius: 50px;
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  /* Flatter buttons */
+  padding: 0.8rem 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent-color);
   cursor: pointer;
   transition: all 0.2s ease;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   margin-top: auto;
-  /* Push to bottom */
 }
 
-/* Progress Bar in Level 2 */
+.mode-card-btn:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Progress Section in Module */
 .progress-container {
   width: 100%;
-  margin-bottom: 1.5rem;
-  text-align: left;
+  margin: 1rem 0 2rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .progress-bar-bg {
   width: 100%;
-  height: 6px;
-  background: var(--bg-tertiary);
-  border-radius: 3px;
+  height: 4px;
+  background: var(--navy-accent);
+  border-radius: 2px;
   overflow: hidden;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background: #3b82f6;
-  border-radius: 3px;
+  background: var(--accent-color);
+  transition: width 1s ease-in-out;
 }
 
 .progress-text {
+  font-family: var(--font-sans);
   font-size: 0.75rem;
-  color: var(--text-accent);
+  color: var(--text-muted);
   text-align: center;
-  margin: 0;
+  font-weight: 600;
+}
+
+/* Badge for Advanced */
+.mode-badge-container {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 2;
+}
+
+.mode-badge {
+  background: var(--accent-color);
+  color: #000;
+  font-size: 0.65rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+  .start-page {
+    padding: 2rem 1rem;
+  }
+
+  .start-page-title {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
   .mode-cards {
     grid-template-columns: 1fr;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
   }
 
-  .mode-card.final-boss {
-    margin-top: 0;
+  .mode-card {
+    min-height: auto;
   }
 }
 
-/* Disclaimer / About Link */
+/* Disclaimer / About Link (Refined) */
 .about-link-container {
-  margin-top: 2rem;
+  margin-top: 4rem;
   text-align: center;
 }
 
 .about-link-btn {
   background: transparent;
-  border: 1px solid #4a5568;
-  border-radius: 6px;
-  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--sidebar-border);
+  border-radius: 4px;
+  padding: 0.75rem 2rem;
   color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .about-link-btn:hover {
-  border-color: #cbd5e0;
+  border-color: var(--accent-color);
   color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.language-selection-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background-color: rgba(var(--bg-secondary-rgb), 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--sidebar-border);
+  border-radius: 12px;
+  padding: 3rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+.language-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .language-selection-overlay {
+    padding: 2rem 1rem;
+    margin: 1rem;
+    min-height: auto;
+  }
+
+  .language-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }

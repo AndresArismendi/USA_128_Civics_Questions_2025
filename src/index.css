@@ -5,40 +5,49 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Theme Variables - Default (Dark) */
-  --bg-primary: #0f1115;
-  --bg-secondary: #1a1d26;
-  --bg-secondary-rgb: 26, 29, 38;
-  --bg-tertiary: #2d3748;
-  --text-primary: #e2e8f0;
-  --text-secondary: #a0aec0;
-  --text-muted: #8b9bb4;
-  --border-color: #2d3748;
-  --accent-color: #3b82f6;
-  --accent-hover: #2563eb;
-  --shadow-color: rgba(0, 0, 0, 0.4);
+  /* Theme Variables - Professional Palette (Navy & Gold) */
+  --bg-primary: #0a0c10;
+  --bg-secondary: #141820;
+  --bg-secondary-rgb: 20, 24, 32;
+  --bg-tertiary: #1c2533;
+  --text-primary: #f0f4f8;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: #334155;
+  --accent-color: #d4af37;
+  /* Muted Gold */
+  --accent-hover: #b8860b;
+  /* Darker Gold */
+  --navy-accent: #1e293b;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 
   /* Sidebar specific */
-  --sidebar-bg: #1a1d26;
-  --sidebar-border: rgba(255, 255, 255, 0.1);
-  --sidebar-item-hover: rgba(255, 255, 255, 0.05);
+  --sidebar-bg: #0a0c10;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-item-hover: rgba(255, 255, 255, 0.03);
 
   /* Quiz specifics */
-  --quiz-bg: #1a1d26;
-  --element-hover: #4a5568;
-  --text-accent: #90cdf4;
+  --quiz-bg: #141820;
+  --element-hover: #1e293b;
+  --text-accent: #d4af37;
 
   /* Feedback Colors */
-  --success-color: #48bb78;
-  --error-color: #f56565;
-  --success-bg: rgba(39, 103, 73, 0.3);
-  --error-bg: rgba(197, 48, 48, 0.3);
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --success-bg: rgba(16, 185, 129, 0.1);
+  --error-bg: rgba(239, 68, 68, 0.1);
+
+  /* Fonts */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 /* Light Theme Overrides */
@@ -79,13 +88,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--bg-primary);
-  background-image: url('./assets/dark-bg.jpg');
+  background-image: url('./assets/professional_civics_bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text-primary);
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-sans);
   transition: background-color 0.3s ease, color 0.3s ease, background-image 0.5s ease;
 }
 
@@ -138,4 +147,23 @@ body.dark-theme {
 
 #root {
   min-height: 100vh;
+}
+
+/* Glassmorphism card for full-page text content (About, Privacy) */
+.content-card {
+  background-color: rgba(var(--bg-secondary-rgb), 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--sidebar-border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .content-card {
+    padding: 1.5rem;
+  }
 }

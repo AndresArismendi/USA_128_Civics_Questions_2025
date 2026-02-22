@@ -1,0 +1,35 @@
+.global-footer {
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    background: rgba(var(--bg-secondary-rgb), 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--sidebar-border);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.disclaimer-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.copyright-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .global-footer {
+        padding: 1rem;
+    }
+}

@@ -8,6 +8,7 @@ import PrivacyPolicy from './components/PrivacyPolicy.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import { ThemeProvider } from './context/ThemeContext'
 import ThemeToggle from './components/ThemeToggle.jsx'
+import Footer from './components/Footer.jsx'
 
 function App() {
   const [quizDataEn, setQuizDataEn] = useState(null)
@@ -77,6 +78,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
             </Routes>
+            <Footer />
           </div>
         </div>
       </BrowserRouter>

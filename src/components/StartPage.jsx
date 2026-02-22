@@ -6,49 +6,54 @@ import './StartPage.css';
 const MODES = {
   quick: {
     id: 'quick',
-    cardClass: 'level-1',
-    icon: '⚡', // Lightning bolt
-    title: 'Level 1:\nThe 2-Minute Drill',
-    subtitle: 'Algorithm: Foundation',
-    description: 'Short practice session with 10 randomized evaluation for fast retest. No pass/fail limit.',
-    buttonLabel: 'Start Practice →',
+    cardClass: 'prof-card',
+    icon: '⏳', // Hourglass/Clock
+    title: 'Quick Review: Fundamentals',
+    subtitle: 'Foundation: Core Concepts',
+    description: 'Concise practice session featuring 10 essential questions for efficient proficiency assessment.',
+    buttonLabel: 'Initiate Review →',
+    group: 'training'
   },
   study: {
     id: 'study',
-    cardClass: 'level-2',
-    icon: '📖', // Open book
-    title: 'Level 2: The Gauntlet',
-    subtitle: 'Module: Full Deck Mastery',
-    description: '65% Mastered', // Placeholder for progress if available, else static text from image
-    buttonLabel: 'Begin Challenge →',
+    cardClass: 'prof-card',
+    icon: '📚', // Books
+    title: 'Comprehensive Mastery Module',
+    subtitle: 'Module: Full Curriculum Mastery',
+    description: 'Detailed study of the complete 128-question bank with integrated progress tracking.',
+    buttonLabel: 'Begin Module →',
+    group: 'training'
   },
   exam: {
     id: 'exam',
-    cardClass: 'final-boss',
-    icon: '👑', // Crown
-    title: 'The Final Boss',
-    subtitle: 'Assessment: Official Simulation',
-    description: '20 Qs',
-    buttonLabel: 'Take Exam →',
+    cardClass: 'prof-card',
+    icon: '🎖️', // Military Medal/Seal
+    title: 'Official Simulation Exam',
+    subtitle: 'Assessment: Standardized Simulation',
+    description: 'Formal examination mirroring the official USCIS 20-question naturalization format.',
+    buttonLabel: 'Start Examination →',
+    group: 'training'
   },
   real_no_options: {
     id: 'real_no_options',
-    cardClass: 'bonus-round',
-    icon: '💀', // Skull
-    title: 'Bonus Round:\nGhost Mode',
-    subtitle: 'Hardcore: No Assistance',
-    description: '',
-    buttonLabel: 'Attempt Hard →',
-    badge: 'HARD',
+    cardClass: 'prof-card',
+    icon: '🛡️', // Shield
+    title: 'Advanced Assessment (No Aids)',
+    subtitle: 'Advanced: Independent Response',
+    description: 'High-difficulty assessment without multiple-choice assistance. Manual verification required.',
+    buttonLabel: 'Begin Assessment →',
+    badge: 'ADVANCED',
+    group: 'extra'
   },
   audio: {
     id: 'audio',
-    cardClass: 'level-2',
-    icon: '🎧', // Headphones
-    title: 'Audio Mode',
-    subtitle: 'Listen and Learn',
-    description: 'Full Deck Audio Experience',
-    buttonLabel: 'Start Listening →',
+    cardClass: 'prof-card',
+    icon: '🎧', // Headphones icon for Audio Study Guide
+    title: 'Audio Study Guide',
+    subtitle: 'Resource: Auditory Learning',
+    description: 'Complete curriculum transition to professional audio-guided study sessions.',
+    buttonLabel: 'Open Study Guide →',
+    group: 'extra'
   },
 }
 
@@ -71,34 +76,36 @@ function StartPage({ totalQuestions }) {
   if (pendingMode) {
     return (
       <div className="start-page">
-        <h2 style={{ textAlign: "center", margin: "2rem 0", color: "#fff" }}>
-          Choose Language / Elige idioma
-        </h2>
-        <div style={{ display: "flex", justifyContent: "center", gap: "2rem" }}>
-          <button
-            className="mode-card-btn"
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff" }}
-            onClick={() => handleModeSelect(pendingMode, 'en')}
-          >
-            <img src="/usa-flag.png" alt="USA Flag" style={{ width: "30px", height: "auto", color: "#fff" }} />
-            English
-          </button>
-          <button
-            className="mode-card-btn"
-            style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff" }}
-            onClick={() => handleModeSelect(pendingMode, 'es')}
-          >
-            <img src="/spain-flag.png" alt="Spain Flag" style={{ width: "30px", height: "auto", color: "#fff" }} />
-            Español
-          </button>
-        </div>
-        <div style={{ textAlign: "center", marginTop: "1.5rem" }}>
-          <button
-            className="about-link-btn"
-            onClick={() => setPendingMode(null)}
-          >
-            Cancel
-          </button>
+        <div className="language-selection-overlay">
+          <h2 style={{ textAlign: "center", marginBottom: "2rem", color: "var(--text-primary)" }}>
+            Choose Language / Elige idioma
+          </h2>
+          <div className="language-buttons">
+            <button
+              className="mode-card-btn"
+              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+              onClick={() => handleModeSelect(pendingMode, 'en')}
+            >
+              <img src="/usa-flag.png" alt="USA Flag" style={{ width: "30px", height: "auto" }} />
+              English
+            </button>
+            <button
+              className="mode-card-btn"
+              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+              onClick={() => handleModeSelect(pendingMode, 'es')}
+            >
+              <img src="/spain-flag.png" alt="Spain Flag" style={{ width: "30px", height: "auto" }} />
+              Español
+            </button>
+          </div>
+          <div style={{ textAlign: "center", marginTop: "2rem" }}>
+            <button
+              className="about-link-btn"
+              onClick={() => setPendingMode(null)}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -107,87 +114,59 @@ function StartPage({ totalQuestions }) {
   // --- Mode cards render ---
   return (
     <div className="start-page">
-      <h1 className="start-page-title">Your Path to Citizenship Starts Here</h1>
+      <h1 className="start-page-title">Naturalization Study & Assessment Portal</h1>
 
-      {/* Skill Progression section - per image, if feasible later, skipping for now to focus on cards */}
-      <div className="skill-progression-placeholder"></div>
+      <div className="portal-section">
+        <h2 className="section-title">- Training Levels - </h2>
+        <div className="mode-cards">
+          {Object.values(MODES).filter(m => m.group === 'training').map(mode => (
+            <div key={mode.id} className={`mode-card ${mode.cardClass}`}>
+              <div className="mode-card-body">
+                <div className="mode-card-icon" aria-hidden="true">{mode.icon}</div>
+                <h2 className="mode-card-title">{mode.title}</h2>
+                <p className="mode-card-subtitle">{mode.subtitle}</p>
 
-      <div className="mode-cards">
-        {/* Level 1: Quick */}
-        <div className={`mode-card ${MODES.quick.cardClass}`}>
-          <div className="mode-card-body">
-            <div className="mode-card-icon" aria-hidden="true">{MODES.quick.icon}</div>
-            <h2 className="mode-card-title">{MODES.quick.title}</h2>
-            <p className="mode-card-subtitle">{MODES.quick.subtitle}</p>
-            <p className="mode-card-desc">{MODES.quick.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('quick')}>
-              {MODES.quick.buttonLabel}
-            </button>
-          </div>
-        </div>
+                {mode.id === 'study' ? (
+                  <div className="progress-container">
+                    <div className="progress-bar-bg"><div className="progress-bar-fill" style={{ width: '65%' }}></div></div>
+                    <p className="progress-text">65% Curriculum Mastery</p>
+                  </div>
+                ) : (
+                  <p className="mode-card-desc">{mode.description}</p>
+                )}
 
-        {/* Level 2: Study */}
-        <div className={`mode-card ${MODES.study.cardClass}`}>
-          <div className="mode-card-body">
-            <div className="mode-card-icon" aria-hidden="true">{MODES.study.icon}</div>
-            <h2 className="mode-card-title">{MODES.study.title}</h2>
-            <p className="mode-card-subtitle">{MODES.study.subtitle}</p>
-            {/* Progress bar placeholder */}
-            <div className="progress-container">
-              <div className="progress-bar-bg"><div className="progress-bar-fill" style={{ width: '65%' }}></div></div>
-              <p className="progress-text">{MODES.study.description}</p>
+                <button type="button" className="mode-card-btn" onClick={() => setPendingMode(mode.id)}>
+                  {mode.buttonLabel}
+                </button>
+              </div>
             </div>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('study')}>
-              {MODES.study.buttonLabel}
-            </button>
-          </div>
+          ))}
         </div>
-
-        {/* Final Boss: Exam */}
-        <div className={`mode-card ${MODES.exam.cardClass}`}>
-          <div className="castle-header-decoration"></div> {/* Specific decoration if needed in CSS */}
-          <div className="mode-card-body">
-            <div className="hearts-container">❤️❤️❤️</div>
-            <div className="mode-card-icon" aria-hidden="true">{MODES.exam.icon}</div>
-            <h2 className="mode-card-title">{MODES.exam.title}</h2>
-            <p className="mode-card-subtitle">{MODES.exam.subtitle}</p>
-            <p className="mode-card-desc">{MODES.exam.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('exam')}>
-              {MODES.exam.buttonLabel}
-            </button>
-          </div>
-        </div>
-
-        {/* Bonus Round */}
-        <div className={`mode-card ${MODES.real_no_options.cardClass}`}>
-          <div className="mode-badge-container">
-            <span className="mode-badge">{MODES.real_no_options.badge}</span>
-          </div>
-          <div className="mode-card-body">
-            <div className="mode-card-icon" aria-hidden="true">{MODES.real_no_options.icon}</div>
-            <h2 className="mode-card-title">{MODES.real_no_options.title}</h2>
-            <p className="mode-card-subtitle">{MODES.real_no_options.subtitle}</p>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('real_no_options')}>
-              {MODES.real_no_options.buttonLabel}
-            </button>
-          </div>
-        </div>
-
-        {/* Audio Mode */}
-        <div className={`mode-card ${MODES.audio.cardClass}`}>
-          <div className="mode-card-body">
-            <div className="mode-card-icon" aria-hidden="true">{MODES.audio.icon}</div>
-            <h2 className="mode-card-title">{MODES.audio.title}</h2>
-            <p className="mode-card-subtitle">{MODES.audio.subtitle}</p>
-            <p className="mode-card-desc">{MODES.audio.description}</p>
-            <button type="button" className="mode-card-btn" onClick={() => setPendingMode('audio')}>
-              {MODES.audio.buttonLabel}
-            </button>
-          </div>
-        </div>
-
       </div>
 
+      <div className="portal-section">
+        <h2 className="section-title">- Extra Modes -</h2>
+        <div className="mode-cards">
+          {Object.values(MODES).filter(m => m.group === 'extra').map(mode => (
+            <div key={mode.id} className={`mode-card ${mode.cardClass}`}>
+              {mode.badge && (
+                <div className="mode-badge-container">
+                  <span className="mode-badge">{mode.badge}</span>
+                </div>
+              )}
+              <div className="mode-card-body">
+                <div className="mode-card-icon" aria-hidden="true">{mode.icon}</div>
+                <h2 className="mode-card-title">{mode.title}</h2>
+                <p className="mode-card-subtitle">{mode.subtitle}</p>
+                <p className="mode-card-desc">{mode.description}</p>
+                <button type="button" className="mode-card-btn" onClick={() => setPendingMode(mode.id)}>
+                  {mode.buttonLabel}
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
