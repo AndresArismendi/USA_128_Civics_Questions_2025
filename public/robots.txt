@@ -2,5 +2,8 @@
 User-agent: *
 Allow: /
 
-# Sitemaps (uncomment if you have a sitemap)
-# Sitemap: https://yourdomain.com/sitemap.xml
+# Specifically for AdSense
+User-agent: Mediapartners-Google
+Allow: /
+
+Sitemap: https://mycivics128.com/sitemap.xml
