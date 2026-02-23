@@ -9,6 +9,8 @@ import Sidebar from './components/Sidebar.jsx'
 import { ThemeProvider } from './context/ThemeContext'
 import ThemeToggle from './components/ThemeToggle.jsx'
 import Footer from './components/Footer.jsx'
+import Contact from './components/Contact.jsx'
+import TermsAndConditions from './components/TermsAndConditions.jsx'
 
 function App() {
   const [quizDataEn, setQuizDataEn] = useState(null)
@@ -77,6 +79,8 @@ function App() {
               />
               <Route path="/about" element={<About />} />
               <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<TermsAndConditions />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
             <Footer />
           </div>
